@@ -1,81 +1,131 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RISHABH & BROTHERS SERVICES</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-      color: #333;
+      margin: 0; padding: 0;
+      background-color: #f9f9f9;
     }
     header {
-      background-color: #FF6600;
+      background-color: #1e88e5;
       color: white;
-      padding: 20px 0;
-      text-align: center;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    nav {
-      text-align: center;
-      background: #0056b3;
-      padding: 10px 0;
+    header img {
+      height: 60px;
     }
     nav a {
       color: white;
-      margin: 0 15px;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
     }
-    .container {
-      padding: 30px;
+    .hero {
+      padding: 60px 40px;
+      background: #e3f2fd;
       text-align: center;
     }
+    .hero h1 {
+      font-size: 36px;
+    }
+    .services, .contact {
+      padding: 40px;
+    }
+    .services h2, .contact h2 {
+      font-size: 28px;
+      color: #1e88e5;
+      margin-bottom: 20px;
+    }
+    .service-item {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 5px solid #1e88e5;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background-color: #1e88e5;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 10px;
+      cursor: pointer;
+    }
     footer {
-      background: #222;
-      color: #ccc;
+      background: #0d47a1;
+      color: white;
       text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-      <img src="logo.jpg" alt="Company Logo" style="height: 60px; margin-right: 15px;"> <h1>RISHABH & BROTHERS SERVICES</h1>
-     </header>
-
+<header>
+  <div>
+    <img src="logo.jpg" alt="Company Logo" />
+  </div>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </nav>
+</header>
 
-  <div class="container">
-    <h2>Welcome to RISHABH & BROTHERS SERVICES</h2>
-    <p>We provide professional and reliable services to meet your business needs.</p>
-    
-    <h3>Our Services:</h3>
-    <section id="services" style="background: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
-  <h2 style="text-align: center; color: ##FF6600; margin-bottom: 30px;">Our Services</h2>
-  
-  <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+<section class="hero">
+  <h1>Welcome to RISHABH & BROTHERS SERVICES</h1>
+  <p>Professional, Reliable, and Affordable Services</p>
+</section>
 
-    <div style="flex: 1 1 300px; background: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
-      <h3 style="color: #0056b3;">Manpower Supply</h3>
-      <p>We provide manpower for industries, construction, maintenance, and office support roles.</p>
-    </div>
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <div class="service-item">
+    <h3>Electrical Maintenance</h3>
+    <p>Complete electrical repair and installation solutions for homes and businesses.</p>
+  </div>
+  <div class="service-item">
+    <h3>Air Conditioning Services</h3>
+    <p>Installation and servicing of all AC brands.</p>
+  </div>
+  <div class="service-item">
+    <h3>Plumbing & Sanitation</h3>
+    <p>Expert plumbing services with fast response and long-lasting solutions.</p>
+  </div>
+</section>
 
-    <div style="flex: 1 1 300px; background: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
-      <h3 style="color: #0056b3;">Electrical Operation, Maintenance and Support</h3>
-      <p>Comprehensive maintenance services for electrical, hardware, and facility management to keep your operations running smoothly.</p>
-    </div>
-  
-    </section>
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <form action="mailto:support@raigroups.in" method="post" enctype="text/plain">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required/>
 
-  <footer>
-    <p>&copy; 2025 RISHABH & BROTHERS SERVICES. All Rights Reserved.</p>
-    <p>Email: support@raigroups.in | Phone: +91-8173924444</p>
-  </footer>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required/>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+  <p><strong>Email:</strong> support@raigroups.in</p>
+  <p><strong>Phone:</strong> +91 8173924444</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 RISHABH & BROTHERS SERVICES | All rights reserved.</p>
+</footer>
+
+</body>
+</html>
