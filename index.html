@@ -3,44 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RISHABH & BROTHERS SERVICES</title>
+  <title>Services | RISHABH & BROTHERS SERVICES</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #f9f9f9;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
     header {
-      background-color: #1e88e5;
-      color: white;
+      background-color: #1e88e5; color: white;
+      display: flex; justify-content: space-between; align-items: center;
       padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
-    header img {
-      height: 60px;
-    }
+    header img { height: 50px; }
     nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
+      color: white; margin-left: 20px;
+      text-decoration: none; font-weight: bold;
     }
-    .hero {
-      padding: 60px 40px;
-      background: #e3f2fd;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 36px;
-    }
-    .home, .services, .contact {
+    .content {
       padding: 40px;
     }
-     .home h2, .services h2, .contact h2 {
-      font-size: 28px;
+    .content h2 {
       color: #1e88e5;
+      font-size: 28px;
       margin-bottom: 20px;
     }
     .service-item {
@@ -49,20 +30,6 @@
       margin-bottom: 20px;
       border-left: 5px solid #1e88e5;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-    }
-    form button {
-      background-color: #1e88e5;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      margin-top: 10px;
-      cursor: pointer;
     }
     footer {
       background: #0d47a1;
@@ -75,57 +42,32 @@
 <body>
 
 <header>
-  <div>
-    <img src="logo.jpg" alt="Company Logo" />
-  </div>
+  <div><img src="logo.jpg" alt="Logo"></div>
   <nav>
     <a href="index.html">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Welcome to RISHABH & BROTHERS SERVICES</h1>
-  <p>Professional, Reliable, and Affordable Services</p>
-</section>
-
-<section class="services" id="services">
+<section class="content">
   <h2>Our Services</h2>
   <div class="service-item">
     <h3>Electrical Maintenance</h3>
-    <p>Complete electrical repair and installation solutions for homes and businesses.</p>
+    <p>Complete repair and installation solutions for home and commercial needs.</p>
   </div>
   <div class="service-item">
     <h3>Air Conditioning Services</h3>
-    <p>Installation and servicing of all AC brands.</p>
+    <p>Installation, repair, and servicing of all AC brands.</p>
   </div>
   <div class="service-item">
     <h3>Plumbing & Sanitation</h3>
-    <p>Expert plumbing services with fast response and long-lasting solutions.</p>
+    <p>Reliable plumbing services with quality materials and expert technicians.</p>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <form action="mailto:support@raigroups.in" method="post" enctype="text/plain">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required/>
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required/>
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
-  <p><strong>Email:</strong> admin@raigroups.in</p>
-  <p><strong>Phone:</strong> +91 8172840406</p>
-</section>
-
 <footer>
-  <p>&copy; 2024 RISHABH & BROTHERS SERVICES | All rights reserved.</p>
+  <p>&copy; 2025 RISHABH & BROTHERS SERVICES | All rights reserved.</p>
 </footer>
 
 </body>
