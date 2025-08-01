@@ -1,0 +1,21 @@
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Email:</strong> <a href="mailto:support@raigroups.in">support@raigroups.in</a></p>
+  <p><strong>Phone:</strong> <a href="tel:+918173924444">+91 8173924444</a></p>
+</section>
+
+<section id="contact">
+  <h2>Send Us a Message</h2>
+  <form action="mailto:support@raigroups.in" method="post" enctype="text/plain">
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">Your Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <input type="submit" value="Send">
+  </form>
+</section>
