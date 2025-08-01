@@ -43,9 +43,8 @@
 <body>
 
   <header>
-    <h1>RISHABH & BROTHERS SERVICES</h1>
-    <p>Your Trusted Business Partner</p>
-  </header>
+      <img src="logo.jpg" alt="Company Logo" style="height: 60px; margin-right: 15px;"> <h1>RISHABH & BROTHERS SERVICES</h1>
+     </header>
 
   <nav>
     <a href="#">Home</a>
@@ -59,13 +58,33 @@
     <p>We provide professional and reliable services to meet your business needs.</p>
     
     <h3>Our Services:</h3>
-    <ul style="text-align: left; display: inline-block;">
-      <li>Business Consulting</li>
-      <li>IT & Networking Solutions</li>
-      <li>Manpower Supply</li>
-      <li>Maintenance and Support</li>
-    </ul>
+    <section id="services" style="background: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
+  <h2 style="text-align: center; color: #007bff; margin-bottom: 30px;">Our Services</h2>
+  
+  <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+
+    <div style="flex: 1 1 300px; background: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
+      <h3 style="color: #0056b3;">Business Consulting</h3>
+      <p>We provide expert business consultation tailored to your needs, including planning, strategy, and growth execution.</p>
+    </div>
+
+    <div style="flex: 1 1 300px; background: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
+      <h3 style="color: #0056b3;">IT & Networking Solutions</h3>
+      <p>Setup, manage, and maintain IT infrastructure including LAN/WAN, servers, and security systems with top-notch support.</p>
+    </div>
+
+    <div style="flex: 1 1 300px; background: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
+      <h3 style="color: #0056b3;">Manpower Supply</h3>
+      <p>We provide skilled and semi-skilled manpower for industries, construction, maintenance, and office support roles.</p>
+    </div>
+
+    <div style="flex: 1 1 300px; background: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
+      <h3 style="color: #0056b3;">Maintenance and Support</h3>
+      <p>Comprehensive maintenance services for electrical, hardware, and facility management to keep your operations running smoothly.</p>
+    </div>
+
   </div>
+</section>
 
   <footer>
     <p>&copy; 2025 RISHABH & BROTHERS SERVICES. All Rights Reserved.</p>
