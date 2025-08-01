@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +11,7 @@
       color: #333;
     }
     header {
-      background-color: #007bff;
+      background-color: #FF6600;
       color: white;
       padding: 20px 0;
       text-align: center;
