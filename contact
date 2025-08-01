@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RISHABH RAI SERVICES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    nav {
+      text-align: center;
+      background: #0056b3;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 30px;
+      text-align: center;
+    }
+    .contact-form {
+      background: white;
+      padding: 20px;
+      max-width: 500px;
+      margin: 30px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RISHABH RAI SERVICES</h1>
+    <p>Your Trusted Business Partner</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Welcome to RISHABH RAI SERVICES</h2>
+    <p>We provide professional and reliable services to meet your business needs.</p>
+
+    <h3>Our Services:</h3>
+    <ul style="text-align: left; display: inline-block;">
+      <li>Business Consulting</li>
+      <li>IT & Networking Solutions</li>
+      <li>Manpower Supply</li>
+      <li>Maintenance and Support</li>
+    </ul>
+  </div>
+
+  <div class="contact-form" id="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:support@raigroups.in" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Your Phone Number">
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 RISHABH RAI SERVICES. All Rights Reserved.</p>
+    <p>Email: support@raigroups.in | Phone: +91-8173924444</p>
+  </footer>
+
+</body>
+</html>
