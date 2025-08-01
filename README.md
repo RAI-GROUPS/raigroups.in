@@ -59,7 +59,7 @@
     
     <h3>Our Services:</h3>
     <section id="services" style="background: #fff; padding: 40px 20px; font-family: Arial, sans-serif;">
-  <h2 style="text-align: center; color: #007bff; margin-bottom: 30px;">Our Services</h2>
+  <h2 style="text-align: center; color: ##FF6600; margin-bottom: 30px;">Our Services</h2>
   
   <div style="max-width: 1000px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
 
