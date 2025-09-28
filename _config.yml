@@ -2,3 +2,16 @@ title: RISHABH & BROTHERS SERVICES
 url: "https://raigroups.in"
 baseurl: ""  
 enforce_ssl: raigroups.in
+
+# Recommended Jekyll settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude folders/files from build
+exclude:
+  - .github
+  - node_modules
+  - vendor
