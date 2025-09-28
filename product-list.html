@@ -65,6 +65,7 @@
                     <th>Model</th>
                     <th>Description</th>
                     <th>Image</th>
+                    <th>Inquiry</th>
                 </tr>
             </thead>
             <tbody>
@@ -72,50 +73,66 @@
                     <td>2M</td>
                     <td>2 Module Electrical Modular Box</td>
                     <td><img src="2M.jpg" alt="2M Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('2M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>3M</td>
                     <td>3 Module Electrical Modular Box</td>
                     <td><img src="3M.jpg" alt="3M Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('3M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>4M</td>
                     <td>4 Module Electrical Modular Box</td>
                     <td><img src="4M.jpg" alt="4M Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('4M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>6M</td>
                     <td>6 Module Electrical Modular Box</td>
                     <td><img src="6M.jpg" alt="6M Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('6M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>8MS</td>
                     <td>8 Module Slim Electrical Modular Box</td>
                     <td><img src="8MS.jpg" alt="8MS Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('8MS')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>8MH</td>
                     <td>8 Module Heavy Electrical Modular Box</td>
                     <td><img src="8MH.jpg" alt="8MH Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('8MH')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>12M</td>
                     <td>12 Module Electrical Modular Box</td>
                     <td><img src="12M.jpg" alt="12M Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('12M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>16M</td>
                     <td>16 Module Electrical Modular Box</td>
                     <td><img src="16M.jpg" alt="16M Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('16M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
                 <tr>
                     <td>18M</td>
                     <td>18 Module Electrical Modular Box</td>
                     <td><img src="18M.jpg" alt="18M Box" class="product-img"></td>
+                    <td><button onclick="openInquiryPopup('18M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
                 </tr>
             </tbody>
         </table>
-    </section>
+        <!-- Inquiry Popup -->
+        <div id="inquiry-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+            <div style="background:#fff;padding:32px;border-radius:8px;max-width:600px;width:90vw;margin:auto;position:relative;">
+                <button onclick="closeInquiryPopup()" style="position:absolute;top:8px;right:8px;background:#e53935;color:#fff;border:none;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer;">&times;</button>
+                <h2 style="color:#1e88e5;text-align:center;">Product Inquiry</h2>
+                <iframe aria-label='Product Inquiry' frameborder="0" style="height:500px;width:100%;border:none;" src='https://forms.zohopublic.in/rishabhraig1/form/ProductInquiryForm/formperma/cdGxNDhUCtJp5wN4KqqRy06JOKJPUBQvoZxY91saKtk'></iframe>
+            </div>
+        </div>
 
     <footer>
         <p>&copy; 2024 RISHABH & BROTHERS SERVICES | All rights reserved.</p>
