@@ -207,16 +207,29 @@
                 function closeInquiryPopup() {
                   document.getElementById('inquiry-popup').style.display = 'none';
                 }
-                                                document.getElementById('multi-inquiry-form').addEventListener('submit', function(e) {
-                                                    e.preventDefault();
-                                                    var products = Array.from(document.getElementById('products').selectedOptions).map(opt => opt.value).join(', ');
-                                                    var name = document.getElementById('inq-name').value;
-                                                    var email = document.getElementById('inq-email').value;
-                                                    var comment = document.getElementById('inq-comment').value;
-                                                    var mailto = `mailto:sales@raigroups.in?subject=Product Inquiry&body=Products: ${products}%0AName: ${name}%0AEmail: ${email}%0AComment: ${comment}`;
-                                                    window.location.href = mailto;
-                                                    document.getElementById('inquiry-success').style.display = 'block';
-                                                });
+                                document.getElementById('multi-inquiry-form').addEventListener('submit', function(e) {
+                                    e.preventDefault();
+                                    var products = Array.from(document.getElementById('products').selectedOptions).map(opt => opt.value).join(', ');
+                                    var name = document.getElementById('inq-name').value;
+                                    var email = document.getElementById('inq-email').value;
+                                    var comment = document.getElementById('inq-comment').value;
+                                    fetch('http://localhost:3000/api/inquiry', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({ products, name, email, comment })
+                                    })
+                                    .then(res => res.json())
+                                    .then(data => {
+                                        if (data.success) {
+                                            document.getElementById('inquiry-success').style.display = 'block';
+                                        } else {
+                                            alert('Failed to send inquiry. Please try again later.');
+                                        }
+                                    })
+                                    .catch(() => {
+                                        alert('Failed to send inquiry. Please try again later.');
+                                    });
+                                });
             </script>
 </body>
 </html>
