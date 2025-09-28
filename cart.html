@@ -42,7 +42,8 @@
     <table>
       <thead>
         <tr>
-          <th>Product</th>
+          <th>Model</th>
+          <th>Description</th>
           <th>Quantity</th>
           <th>Remove</th>
         </tr>
@@ -57,8 +58,9 @@
       <label for="address">Address</label>
       <input type="text" id="address" name="address" required />
 
-      <label for="pincode">Pin Code</label>
-      <input type="text" id="pincode" name="pincode" required />
+  <label for="pincode">Pin Code</label>
+  <input type="text" id="pincode" name="pincode" required pattern="\d{6}" maxlength="6" />
+  <div id="pincode-alert" style="color:red;display:none;margin-bottom:8px;">Please enter a valid pincode</div>
 
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required />
@@ -66,7 +68,7 @@
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required />
 
-      <button type="submit" style="background-color:#1e88e5;color:white;padding:10px 20px;border:none;margin-top:10px;cursor:pointer;">Place Order</button>
+  <button type="submit" style="background-color:#1e88e5;color:white;padding:10px 20px;border:none;margin-top:10px;cursor:pointer;">Place Order</button>
     </form>
   </section>
 
@@ -93,16 +95,45 @@
       const tbody = document.getElementById('cart-items');
       tbody.innerHTML = '';
       if (cart.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Your cart is empty.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">Your cart is empty.</td></tr>';
         return;
       }
       cart.forEach(item => {
         const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${item.model}</td><td>${item.quantity}</td><td><button onclick=\"removeFromCart('${item.model}')\" style=\"background:#e53935;color:#fff;padding:6px 12px;border:none;border-radius:4px;cursor:pointer;\">Remove</button></td>`;
+        tr.innerHTML = `<td>${item.model}</td><td>${item.description}</td><td>${item.quantity}</td><td><button onclick=\"removeFromCart('${item.model}')\" style=\"background:#e53935;color:#fff;padding:6px 12px;border:none;border-radius:4px;cursor:pointer;\">Remove</button></td>`;
         tbody.appendChild(tr);
       });
     }
     renderCart();
+
+    // Pin code validation
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      var pincode = document.getElementById('pincode').value.trim();
+      var alertDiv = document.getElementById('pincode-alert');
+      alertDiv.style.display = 'none';
+      if (!/^\d{6}$/.test(pincode)) {
+        alertDiv.textContent = 'Please enter a valid pincode';
+        alertDiv.style.display = 'block';
+        e.preventDefault();
+        return false;
+      }
+      fetch('https://api.postalpincode.in/pincode/' + pincode)
+        .then(response => response.json())
+        .then(data => {
+          if (!data || !data[0] || data[0].Status !== 'Success') {
+            alertDiv.textContent = 'Please enter a valid pincode';
+            alertDiv.style.display = 'block';
+            e.preventDefault();
+            return false;
+          }
+        })
+        .catch(() => {
+          alertDiv.textContent = 'Please enter a valid pincode';
+          alertDiv.style.display = 'block';
+          e.preventDefault();
+          return false;
+        });
+    });
   </script>
 </body>
 </html>
