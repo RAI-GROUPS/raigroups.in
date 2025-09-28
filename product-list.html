@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Product List | RISHABH & BROTHERS SERVICES</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfcfc; }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fcfcfc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
         header {
             background: linear-gradient(90deg, #1e88e5 60%, #f5f5f5 100%);
             color: #1e88e5;
@@ -37,6 +48,7 @@
             padding: 32px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex: 1;
         }
         .product-list h2 { font-size: 32px; color: #1e88e5; text-align: center; margin-bottom: 24px; }
         table { width: 100%; border-collapse: collapse; margin-top: 24px; }
@@ -50,9 +62,6 @@
             text-align: center;
             padding: 20px 0;
             width: 100%;
-            position: relative;
-            left: 0;
-            bottom: 0;
         }
     </style>
 </head>
