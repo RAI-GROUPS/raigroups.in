@@ -20,7 +20,198 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
-        header img { height: 60px; }
+                <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Product List | RISHABH & BROTHERS SERVICES</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #fcfcfc;
+                }
+                header {
+                    background: linear-gradient(90deg, #1e88e5 60%, #f5f5f5 100%);
+                    color: #1e88e5;
+                    padding: 20px 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                header img { height: 60px; }
+                nav a {
+                    color: #1e88e5;
+                    background: #fff;
+                    margin-left: 20px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    padding: 8px 16px;
+                    border-radius: 4px;
+                    transition: background 0.2s, color 0.2s;
+                }
+                nav a:hover {
+                    background: #e3eaf2;
+                    color: #0d47a1;
+                }
+                .product-list {
+                    max-width: 900px;
+                    margin: 40px auto;
+                    background: #fff;
+                    padding: 32px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                }
+                .product-list h2 { font-size: 32px; color: #1e88e5; text-align: center; margin-bottom: 24px; }
+                table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+                th, td { padding: 12px 16px; border-bottom: 1px solid #eaeaea; text-align: left; vertical-align: middle; }
+                th { background: #f0f0f0; color: #333; }
+                tr:hover { background: #f9f9f9; }
+                .product-img { width: 80px; height: 80px; object-fit: contain; border-radius: 4px; background: #eee; }
+                footer { background: #0d47a1; color: white; text-align: center; padding: 20px; }
+        
+                /* NEW: status badge */
+                .model-status {
+                    display: inline-block;
+                    padding: .25rem .6rem;
+                    border-radius: 8px;
+                    font-size: .9rem;
+                    font-weight: 700;
+                    margin: 0;
+                }
+                .model-status.coming-soon {
+                    background: #fff3cd;
+                    color: #856404;
+                    border: 1px solid rgba(133,100,4,0.12);
+                    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+                }
+        
+                /* small screens: allow table to scroll */
+                @media (max-width: 720px) {
+                    .product-list { padding: 16px; margin: 20px auto; }
+                    table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+                    th, td { white-space: nowrap; }
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <div style="display:flex;flex-direction:column;align-items:flex-start;min-width:220px;">
+                    <a href="index" style="display:inline-block;"><img src="logo.jpg" alt="Company Logo" style="height:60px;cursor:pointer;" /></a>
+                    <h1 style="margin:0;font-size:2.2rem;color:#fff;">RISHABH & BROTHERS SERVICES</h1>
+                    <p style="margin:0;color:#fff;font-size:1rem;">Reliable Electrical and Engineering Solutions</p>
+                </div>
+                <nav>
+                    <a href="/index">Home</a>
+                    <a href="/services">Services</a>
+                    <a href="/product-list">Products</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </header>
+        
+            <section class="product-list">
+            <h2>Products</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Status</th>
+                            <th>Inquiry</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2M</td>
+                            <td>2 Module Electrical Modular Box</td>
+                            <td><img src="2M.jpg" alt="2M Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('2M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>3M</td>
+                            <td>3 Module Electrical Modular Box</td>
+                            <td><img src="3M.jpg" alt="3M Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('3M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>4M</td>
+                            <td>4 Module Electrical Modular Box</td>
+                            <td><img src="4M.jpg" alt="4M Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('4M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>6M</td>
+                            <td>6 Module Electrical Modular Box</td>
+                            <td><img src="6M.jpg" alt="6M Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('6M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>8MS</td>
+                            <td>8 Module Slim Electrical Modular Box</td>
+                            <td><img src="8MS.jpg" alt="8MS Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('8MS')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>8MH</td>
+                            <td>8 Module Heavy Electrical Modular Box</td>
+                            <td><img src="8MH.jpg" alt="8MH Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('8MH')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>12M</td>
+                            <td>12 Module Electrical Modular Box</td>
+                            <td><img src="12M.jpg" alt="12M Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('12M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>16M</td>
+                            <td>16 Module Electrical Modular Box</td>
+                            <td><img src="16M.jpg" alt="16M Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('16M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                        <tr>
+                            <td>18M</td>
+                            <td>18 Module Electrical Modular Box</td>
+                            <td><img src="18M.jpg" alt="18M Box" class="product-img"></td>
+                            <td><span class="model-status coming-soon">Coming Soon</span></td>
+                            <td><button onclick="openInquiryPopup('18M')" style="background:#1e88e5;color:#fff;padding:8px 16px;border-radius:4px;border:none;cursor:pointer;">Inquire</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Inquiry Popup -->
+                <div id="inquiry-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;">
+                    <div style="background:#fff;padding:32px;border-radius:8px;max-width:600px;width:90vw;margin:auto;position:relative;">
+                        <button onclick="closeInquiryPopup()" style="position:absolute;top:8px;right:8px;background:#e53935;color:#fff;border:none;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer;">&times;</button>
+                        <h2 style="color:#1e88e5;text-align:center;">Product Inquiry</h2>
+                        <iframe aria-label='Product Inquiry' frameborder="0" style="height:500px;width:100%;border:none;" src='https://forms.zohopublic.in/rishabhraig1/form/ProductInquiryForm/formperma/cdGxNDhUCtJp5wN4KqqRy06JOKJPUBQvoZxY91saKtk'></iframe>
+                    </div>
+                </div>
+        
+            <footer>
+                <p>&copy; 2024 RISHABH & BROTHERS SERVICES | All rights reserved.</p>
+            </footer>
+            <script>
+                function openInquiryPopup(selectedModel) {
+                    document.getElementById('inquiry-popup').style.display = 'flex';
+                }
+                function closeInquiryPopup() {
+                    document.getElementById('inquiry-popup').style.display = 'none';
+                }
+            </script>
+        </body>
+        </html>header img { height: 60px; }
         nav a {
             color: #1e88e5;
             background: #fff;
