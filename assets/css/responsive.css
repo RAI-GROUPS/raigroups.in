@@ -1,0 +1,70 @@
+/* Reset/box-sizing */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  line-height: 1.4;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Responsive typography */
+:root{
+  --max-width: 1200px;
+  --gutter: 1rem;
+  --fluid-min: 16; /* px */
+  --fluid-max: 20; /* px */
+}
+
+/* fluid type using clamp */
+html { font-size: clamp(0.95rem, calc(0.9rem + 0.6vw), 1.125rem); }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--gutter) * 1);
+  padding-right: calc(var(--gutter) * 1);
+}
+
+/* Flexible layout helpers */
+.row { display: flex; flex-wrap: wrap; gap: 1rem; }
+.col { flex: 1 1 0%; min-width: 0; }
+
+/* Images, videos, tables */
+img, video, iframe { max-width: 100%; height: auto; display: block; }
+table { width: 100%; overflow-x: auto; display: block; }
+
+/* Navigation - simple responsive pattern */
+.navbar { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.navbar .menu { display:flex; gap:0.75rem; }
+.navbar .menu a { text-decoration:none; padding:0.5rem; }
+
+/* Small screens: stack columns, hide wide nav */
+@media (max-width: 900px) {
+  .row { gap: 0.5rem; }
+  .navbar .menu { display: none; } /* replace with hamburger JS if needed */
+}
+
+/* Very small screens: larger touch targets */
+@media (max-width: 480px) {
+  :root { --gutter: 0.75rem; }
+  html { font-size: 0.95rem; }
+  .container { padding-left: 0.75rem; padding-right: 0.75rem; }
+}
+
+/* Utility classes */
+.text-center { text-align:center; }
+.mt-1 { margin-top: .5rem; }
+.mb-1 { margin-bottom: .5rem; }
+
+/* JavaScript-enhanced menu toggle */
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-toggle="menu"]');
+  if (!btn) return;
+  const target = document.querySelector(btn.getAttribute('data-target'));
+  if (!target) return;
+  target.classList.toggle('open');
+});
