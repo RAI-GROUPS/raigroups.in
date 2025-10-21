@@ -5,31 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Services | RISHABH & BROTHERS SERVICES</title>
   <style>
-   body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfcfc; }
-  header {
-    background: linear-gradient(90deg, #1e88e5 60%, #f5f5f5 100%);
-    color: #1e88e5;
-    padding: 20px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  header img { height: 60px; }
-  nav a {
-    color: #1e88e5;
-    background: #fff;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background 0.2s, color 0.2s;
-  }
-  nav a:hover {
-    background: #e3eaf2;
-    color: #0d47a1;
-  }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfcfc; }
+    /* Header: logo and company name side-by-side, responsive */
+    header {
+        background: linear-gradient(90deg, #1e88e5 60%, #f5f5f5 100%);
+        color: #1e88e5;
+        padding: 18px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .header-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        min-width: 180px;
+    }
+    .header-brand img { height: 90px; width: auto; display:block; }
+    .site-title { margin:0; font-size:1.4rem; color:#fff; line-height:1; }
+    .site-tag { margin:0; color:#fff; font-size:0.95rem; opacity:0.95; }
+
+    @media (max-width: 520px) {
+        .header-brand img { height: 62px; }
+        .site-title { font-size: 1.05rem; }
+        header { padding: 12px 12px; }
+        nav { width: 100%; display:flex; gap:8px; justify-content:center; margin-top:8px; }
+        nav a { padding:6px 10px; margin-left:0; }
+    }
+
   footer { background: #0d47a1; color: white; text-align: center; padding: 20px; }
     .services { padding: 40px; }
     .services h2 { font-size: 28px; color: #1e88e5; margin-bottom: 20px; }
@@ -42,18 +47,22 @@
 </head>
 <body>
   <header>
-    <div style="display:flex;flex-direction:column;align-items:flex-start;min-width:220px;">
-      <a href="index"><img src="logo.jpg" alt="Company Logo" style="height:60px;" /></a>
-      <h1 style="margin:0;font-size:2.2rem;color:#fff;">RISHABH & BROTHERS SERVICES</h1>
-      <p style="margin:0;color:#fff;font-size:1rem;">Reliable Electrical and Engineering Solutions</p>
-    </div>
-    <nav>
-  <a href="/index">Home</a>
-  <a href="/services">Services</a>
-  <a href="/product-list">Products</a>
-  <a href="/contact">Contact</a>
-    </nav>
-  </header>
+        <div class="header-brand">
+            <a href="/index" style="display:inline-block;">
+                <img src="logo.jpg" alt="Company Logo" style="cursor:pointer;" />
+            </a>
+            <div>
+                <h1 class="site-title">RISHABH & BROTHERS SERVICES</h1>
+                <p class="site-tag">Reliable Electrical and Engineering Solutions</p>
+            </div>
+        </div>
+        <nav>
+            <a href="/index">Home</a>
+            <a href="/services">Services</a>
+            <a href="/product-list">Products</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
 
   <section class="services">
     <h2>Our Services</h2>
