@@ -179,14 +179,38 @@
         </table>
     </section>
 
+    <!-- Inquiry popup (hidden by default) -->
+    <div id="inquiry-popup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;">
+      <div style="width:calc(100% - 32px);max-width:900px;background:#fff;border-radius:8px;overflow:hidden;position:relative;">
+        <button id="inquiry-close" style="position:absolute;right:8px;top:8px;background:#e53935;color:#fff;border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:18px;line-height:0;">&times;</button>
+        <iframe id="inquiry-iframe" src="" style="width:100%;height:80vh;border:0;" title="Product Inquiry Form"></iframe>
+      </div>
+    </div>
+
     <footer>
         <p>&copy; 2023 RISHABH & BROTHERS SERVICES. All rights reserved.</p>
     </footer>
 
     <script>
-        function openInquiryPopup(model) {
-            alert("Inquiry for model: " + model);
-        }
+      (function(){
+        var formBase = 'https://forms.zohopublic.in/rishabhraig1/form/ProductInquiryForm/formperma/cdGxNDhUCtJp5wN4KqqRy06JOKJPUBQvoZxY91saKtk';
+        var popup = document.getElementById('inquiry-popup');
+        var iframe = document.getElementById('inquiry-iframe');
+        var closeBtn = document.getElementById('inquiry-close');
+
+        window.openInquiryPopup = function(model){
+          var sep = formBase.indexOf('?') === -1 ? '?' : '&';
+          iframe.src = formBase + sep + 'model=' + encodeURIComponent(model);
+          popup.style.display = 'flex';
+        };
+
+        closeBtn.addEventListener('click', function(){ popup.style.display = 'none'; iframe.src = ''; });
+
+        // close when clicking outside the modal content
+        popup.addEventListener('click', function(e){
+          if (e.target === popup) { popup.style.display = 'none'; iframe.src = ''; }
+        });
+      })();
     </script>
 </body>
 </html>
