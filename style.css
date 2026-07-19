@@ -1008,3 +1008,20 @@ a {
     gap: 20px;
   }
 }
+
+/* --- Hero Image Illustration (Electrical & Gateway Theme) --- */
+.hero-image-illustration {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-glass);
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}

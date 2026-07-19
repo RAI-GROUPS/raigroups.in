@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RISHABH & BROTHERS SERVICES Portal Hub - Access ERP/CRM Desk, Support, Documentation, Customer, and Vendor Portals.">
+  <title>Portal Hub | RISHABH & BROTHERS SERVICES</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <span class="logo-accent">RISHABH</span> & BROTHERS SERVICES
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#services" class="nav-link">Our Businesses</a>
+        <a href="index.html#about" class="nav-link">About Us</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="https://mail.raigroups.in" target="_blank" rel="noopener" class="nav-link"><i class="fa-solid fa-envelope"></i> Mail Login</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="index.html" class="cta-btn"><i class="fa-solid fa-arrow-left"></i> Back to Web</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Portals Hub Section -->
+  <section class="section portals-section" style="padding-top: 140px; min-height: 100vh; position: relative;">
+    <div class="hero-bg-glow" style="top: 0; left: 50%; transform: translateX(-50%); opacity: 0.6;"></div>
+    <div class="container">
+      <div class="section-header text-center" style="margin-bottom: 50px;">
+        <span class="badge">Unified Control Center</span>
+        <h2 style="font-size: 42px;">Enterprise Portal Hub</h2>
+        <p>Access secure commercial, logistical, and management dashboards configured for RISHABH & BROTHERS SERVICES operations.</p>
+      </div>
+
+      <!-- Grid Layout for Portals -->
+      <div class="portals-grid">
+        
+        <!-- ERP / CRM Desk (Highlighted as the main workspace) -->
+        <div class="portal-card highlighted-card">
+          <div class="portal-header">
+            <div class="portal-icon erp-icon"><i class="fa-solid fa-gears"></i></div>
+            <span class="portal-badge badge-emerald"><span class="pulse-indicator"></span> System Active</span>
+          </div>
+          <h3>ERP / CRM Desk</h3>
+          <p class="portal-sub">Internal Control Panel</p>
+          <p class="portal-desc">Manage accounts, purchases, sales pipelines, inventory, and human resources in a centralized system.</p>
+          <ul class="portal-features">
+            <li><i class="fa-solid fa-check text-green"></i> General Ledger & Billing</li>
+            <li><i class="fa-solid fa-check text-green"></i> Lead & Deal Tracking</li>
+            <li><i class="fa-solid fa-check text-green"></i> Stock & Warehouse Logs</li>
+          </ul>
+          <a href="https://erp.raigroups.in" target="_blank" rel="noopener" class="portal-link btn-emerald">
+            Access System <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+        </div>
+
+        <!-- Customer Portal -->
+        <div class="portal-card">
+          <div class="portal-header">
+            <div class="portal-icon customer-icon"><i class="fa-solid fa-users"></i></div>
+            <span class="portal-badge badge-blue"><span class="pulse-indicator"></span> Portal Live</span>
+          </div>
+          <h3>Customer Portal</h3>
+          <p class="portal-sub">Client Hub</p>
+          <p class="portal-desc">Allows clients to register, place service inquiries, view invoices, and track active contracts.</p>
+          <ul class="portal-features">
+            <li><i class="fa-solid fa-check text-green"></i> Easy Online Inquiries</li>
+            <li><i class="fa-solid fa-check text-green"></i> Print Active Invoices</li>
+            <li><i class="fa-solid fa-check text-green"></i> View Order Status</li>
+          </ul>
+          <a href="https://customer.raigroups.in/portal" target="_blank" rel="noopener" class="portal-link btn-blue">
+            Client Login <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+        </div>
+
+        <!-- Vendor Portal -->
+        <div class="portal-card">
+          <div class="portal-header">
+            <div class="portal-icon vendor-icon"><i class="fa-solid fa-truck-field"></i></div>
+            <span class="portal-badge badge-purple"><span class="pulse-indicator"></span> Portal Live</span>
+          </div>
+          <h3>Vendor Portal</h3>
+          <p class="portal-sub">Supplier Gateway</p>
+          <p class="portal-desc">Allows verified suppliers to upload bids, check purchase orders, and submit delivery details.</p>
+          <ul class="portal-features">
+            <li><i class="fa-solid fa-check text-green"></i> B2B Bidding & RFQs</li>
+            <li><i class="fa-solid fa-check text-green"></i> Direct Purchase Orders</li>
+            <li><i class="fa-solid fa-check text-green"></i> Shipping Updates</li>
+          </ul>
+          <a href="https://vendor.raigroups.in/portal" target="_blank" rel="noopener" class="portal-link btn-purple">
+            Supplier Login <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+        </div>
+
+        <!-- Support Desk -->
+        <div class="portal-card">
+          <div class="portal-header">
+            <div class="portal-icon support-icon"><i class="fa-solid fa-headset"></i></div>
+            <span class="portal-badge badge-red"><span class="pulse-indicator"></span> Desk Active</span>
+          </div>
+          <h3>Support Desk</h3>
+          <p class="portal-sub">Helpdesk & Support</p>
+          <p class="portal-desc">Dedicated platform to submit service tickets, report glitches, and request billing assistance.</p>
+          <ul class="portal-features">
+            <li><i class="fa-solid fa-check text-green"></i> Live Ticket Raising</li>
+            <li><i class="fa-solid fa-check text-green"></i> Tech Support Resolution</li>
+            <li><i class="fa-solid fa-check text-green"></i> SLA Monitoring</li>
+          </ul>
+          <a href="https://support.raigroups.in/portal" target="_blank" rel="noopener" class="portal-link btn-red">
+            Open Helpdesk <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+        </div>
+
+        <!-- Documentation -->
+        <div class="portal-card">
+          <div class="portal-header">
+            <div class="portal-icon wiki-icon"><i class="fa-solid fa-book-open"></i></div>
+            <span class="portal-badge badge-amber"><span class="pulse-indicator"></span> System Active</span>
+          </div>
+          <h3>Documentation</h3>
+          <p class="portal-sub">Knowledge Base & Wiki</p>
+          <p class="portal-desc">Complete database of SOPs, service manuals, developer tools, and operational workflows.</p>
+          <ul class="portal-features">
+            <li><i class="fa-solid fa-check text-green"></i> Standard Operating Guidelines</li>
+            <li><i class="fa-solid fa-check text-green"></i> Interactive Wiki Pages</li>
+            <li><i class="fa-solid fa-check text-green"></i> User & Admin Manuals</li>
+          </ul>
+          <a href="https://docs.raigroups.in" target="_blank" rel="noopener" class="portal-link btn-amber">
+            Read Wiki <i class="fa-solid fa-right-to-bracket"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-bottom-container" style="padding: 24px 0; border-top: 1px solid var(--border-color); text-align: center;">
+      <p>&copy; 2026 RISHABH & BROTHERS SERVICES. All rights reserved. Consolidated Platform powered by ERPNext.</p>
+    </div>
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
