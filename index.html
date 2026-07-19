@@ -38,7 +38,10 @@
         <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <a href="https://erp.raigroups.in" class="cta-btn">Login / Signup</a>
+        <button id="loginSignupBtn" class="cta-btn">Login / Signup</button>
+        <button id="empSidebarToggle" class="theme-btn" aria-label="Employee Portals" style="border-radius: 8px; width: auto; padding: 0 12px; font-size: 14px; gap: 6px; border-color: var(--border-color); color: var(--text-main);">
+          <i class="fa-solid fa-bars"></i> Staff
+        </button>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -55,7 +58,7 @@
         <h1>Empowering Businesses, <span class="text-gradient">Connecting Ecosystems</span></h1>
         <p class="hero-lead">A unified digital gateway designed for RISHABH & BROTHERS SERVICES customers and suppliers. Scale operations, manage logistics, and trade seamlessly on a single secure platform.</p>
         <div class="hero-actions">
-          <a href="https://erp.raigroups.in" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-solid fa-users"></i> Customer Portal</a>
+          <button class="btn btn-primary open-portal-btn"><i class="fa-solid fa-users"></i> Client Access</button>
           <a href="#services" class="btn btn-secondary">Explore Businesses</a>
         </div>
       </div>
@@ -238,8 +241,8 @@
       <div class="footer-links">
         <h4>Portals</h4>
         <ul>
-          <li><a href="https://erp.raigroups.in" target="_blank" rel="noopener">Customer Portal</a></li>
-          <li><a href="https://erp.raigroups.in" target="_blank" rel="noopener">Supplier Portal</a></li>
+          <li><button class="footer-btn open-portal-btn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Customer Portal</button></li>
+          <li><button class="footer-btn open-portal-btn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Supplier Portal</button></li>
         </ul>
       </div>
     </div>
@@ -256,6 +259,107 @@
   </footer>
 
   <!-- Custom JS -->
+  <!-- Employee Portals Sidebar -->
+  <div id="empSidebar" class="emp-sidebar">
+    <div class="sidebar-header">
+      <h3>Employee Portals</h3>
+      <button id="empSidebarClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="sidebar-body">
+      <p class="sidebar-desc">Internal system links for R&BS staff and administrators.</p>
+      <a href="https://erp.raigroups.in/app" target="_blank" rel="noopener" class="sidebar-link">
+        <i class="fa-solid fa-gears"></i>
+        <div>
+          <span>ERP / CRM Desk</span>
+          <small>Business admin backend</small>
+        </div>
+      </a>
+      <a href="https://support.raigroups.in/portal" target="_blank" rel="noopener" class="sidebar-link">
+        <i class="fa-solid fa-headset"></i>
+        <div>
+          <span>Support Desk</span>
+          <small>Helpdesk ticketing panel</small>
+        </div>
+      </a>
+      <a href="https://docs.raigroups.in" target="_blank" rel="noopener" class="sidebar-link">
+        <i class="fa-solid fa-book-open"></i>
+        <div>
+          <span>SOP Documentation</span>
+          <small>Wiki manuals & guides</small>
+        </div>
+      </a>
+      <a href="https://mail.raigroups.in" target="_blank" rel="noopener" class="sidebar-link">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <span>Mail Server</span>
+          <small>Zoho corporate inbox</small>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+  <!-- Login/Signup Modal -->
+  <div id="loginModal" class="login-modal">
+    <div class="modal-content glass-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Customer & Vendor Login</h3>
+        <button id="modalClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Tab Headers -->
+        <div class="modal-tabs" id="modalTabs">
+          <button id="loginTabBtn" class="tab-btn active">Login</button>
+          <button id="signupTabBtn" class="tab-btn">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <div id="modalLoginForm" class="modal-form-content">
+          <form id="websiteLoginForm">
+            <div class="form-group">
+              <label for="modalEmail">Email Address</label>
+              <input type="email" id="modalEmail" name="usr" required placeholder="Enter your registered email">
+            </div>
+            <div class="form-group">
+              <label for="modalPassword">Password</label>
+              <input type="password" id="modalPassword" name="pwd" required placeholder="Enter your password">
+            </div>
+            <div class="login-error-msg" id="loginErrorMsg" style="color: var(--card-red-glow); font-size: 13px; margin: 8px 0; font-weight: 600;"></div>
+            <button type="submit" class="btn btn-primary submit-btn" style="width: 100%; justify-content: center; margin-top: 15px;">
+              <i class="fa-solid fa-right-to-bracket"></i> Login to Portal
+            </button>
+          </form>
+          <div class="form-divider" style="text-align: center; margin: 15px 0; position: relative;">
+            <span style="background: var(--bg-primary); padding: 0 10px; color: var(--text-muted); font-size: 12px; z-index: 1; position: relative;">OR</span>
+            <div style="position: absolute; top: 50%; left: 0; right: 0; border-top: 1px solid var(--border-color); z-index: 0;"></div>
+          </div>
+          <a href="https://erp.raigroups.in/login#login-with-email-link" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
+            <i class="fa-solid fa-envelope"></i> Login with Email Link
+          </a>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="modalSignupForm" class="modal-form-content hidden">
+          <form id="websiteSignupForm">
+            <div class="form-group">
+              <label for="signupName">Full Name</label>
+              <input type="text" id="signupName" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="signupEmail">Email Address</label>
+              <input type="email" id="signupEmail" required placeholder="Enter your email">
+            </div>
+            <div class="signup-error-msg" id="signupErrorMsg" style="color: var(--card-red-glow); font-size: 13px; margin: 8px 0; font-weight: 600;"></div>
+            <button type="submit" class="btn btn-primary submit-btn" style="width: 100%; justify-content: center; margin-top: 15px;">
+              <i class="fa-solid fa-user-plus"></i> Register Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modalOverlay" class="modal-overlay"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
