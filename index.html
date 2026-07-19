@@ -1,140 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | RISHABH & BROTHERS SERVICES</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fcfcfc; }
-    /* Header: logo and company name side-by-side, responsive */
-    header {
-        background: linear-gradient(90deg, #1e88e5 60%, #f5f5f5 100%);
-        color: #1e88e5;
-        padding: 18px 28px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-    .header-brand {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        min-width: 180px;
-    }
-    .header-brand img { height: 90px; width: auto; display:block; }
-    .site-title { margin:0; font-size:1.4rem; color:#fff; line-height:1; }
-    .site-tag { margin:0; color:#fff; font-size:0.95rem; opacity:0.95; }
-
-    @media (max-width: 520px) {
-        .header-brand img { height: 62px; }
-        .site-title { font-size: 1.05rem; }
-        header { padding: 12px 12px; }
-        nav { width: 100%; display:flex; gap:8px; justify-content:center; margin-top:8px; }
-        nav a { padding:6px 10px; margin-left:0; }
-    }
-
-    .hero-banner {
-      width: 100%;
-      background: #e3f2fd;
-      text-align: center;
-      padding: 48px 0 32px 0;
-      margin: 0;
-    }
-    .hero-banner h1 {
-      font-size: 2.5rem;
-      color: #0d47a1;
-      margin: 0;
-      letter-spacing: 2px;
-    }
-    .hero-banner p {
-      font-size: 1.2rem;
-      color: #1565c0;
-      margin-top: 12px;
-    }
-    .main-content {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px #eaeaea;
-      padding: 32px;
-    }
-    .slider {
-      position: relative;
-      width: 100vw;
-      max-width: 100%;
-      min-width: 100%;
-      margin: 0;
-      left: 50%;
-      right: 50%;
-      transform: translateX(-50%);
-      box-sizing: border-box;
-      max-height: 500px;
-      overflow: hidden;
-    }
-    .slides {
-      display: flex;
-      width: 400%;
-      animation: slide 16s infinite;
-    }
-    .slides img {
-      width: 100vw;
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-      display: block;
-    }
-    @keyframes slide {
-      0%   { margin-left: 0%; }
-      20%  { margin-left: 0%; }
-      25%  { margin-left: -100%; }
-      45%  { margin-left: -100%; }
-      50%  { margin-left: -200%; }
-      70%  { margin-left: -200%; }
-      75%  { margin-left: -300%; }
-      95%  { margin-left: -300%; }
-      100% { margin-left: 0%; }
-    }
-    footer { background: #0d47a1; color: white; text-align: center; padding: 20px; width: 100%; margin-top: 40px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RISHABH & BROTHERS SERVICES Digital Platform - Connecting customers, suppliers, and internal operations through a unified, secure portal.">
+  <title>RISHABH & BROTHERS SERVICES | Digital Enterprise Platform</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-        <div class="header-brand">
-            <a href="/index" style="display:inline-block;">
-                <img src="logo.jpg" alt="Company Logo" style="cursor:pointer;" />
-            </a>
-            <div>
-                <h1 class="site-title">RISHABH & BROTHERS SERVICES</h1>
-                <p class="site-tag">Reliable Electrical and Engineering Solutions</p>
-            </div>
-        </div>
-        <nav>
-            <a href="/index">Home</a>
-            <a href="/services">Services</a>
-            <a href="/product-list">Products</a>
-            <a href="/contact">Contact</a>
-        </nav>
-    </header>
+<body class="light-theme">
 
-  <div class="hero-banner">
-    <h1>Welcome to RISHABH & BROTHERS SERVICES</h1>
-    <p>Reliable Electrical and Engineering Solutions for all your needs.</p>
-  </div>
+  <!-- Header & Navigation -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <span class="logo-accent">RISHABH</span> & BROTHERS SERVICES
+      </a>
+      
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#services" class="nav-link">Our Businesses</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="https://mail.raigroups.in" target="_blank" rel="noopener" class="nav-link"><i class="fa-solid fa-envelope"></i> Mail Login</a>
+      </nav>
 
-  <div class="slider">
-    <div class="slides">
-      <img src="1.jpg" alt="Electrical Panel Work" />
-      <img src="2.jpg" alt="Control Panel Installation" />
-      <img src="1.jpg" alt="Skilled Manpower at Work" />
-      <img src="2.jpg" alt="Site Work in Progress" />
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="#home" class="cta-btn">Access Portals</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
-  </div>
+  </header>
 
-  <footer>
-    <p>&copy; 2024 RISHABH & BROTHERS SERVICES | All rights reserved.</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge">Digital Enterprise Hub</div>
+        <h1>Empowering Businesses, <span class="text-gradient">Connecting Ecosystems</span></h1>
+        <p class="hero-lead">A unified digital gateway designed for RISHABH & BROTHERS SERVICES customers and suppliers. Scale operations, manage logistics, and trade seamlessly on a single secure platform.</p>
+        <div class="hero-actions">
+          <a href="https://customer.raigroups.in" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-solid fa-users"></i> Customer Portal</a>
+          <a href="#services" class="btn btn-secondary">Explore Businesses</a>
+        </div>
+      </div>
+      <div class="hero-graphic">
+        <div class="glass-dashboard">
+          <div class="dash-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="dash-title">RISHABH & BROTHERS SERVICES Hub</span>
+          </div>
+          <div class="dash-body">
+            <div class="dash-row">
+              <a href="https://customer.raigroups.in" target="_blank" rel="noopener" class="dash-card card-blue">
+                <i class="fa-solid fa-users"></i>
+                <div class="dash-card-info">
+                  <span class="card-label">Customer Portal</span>
+                  <span class="card-status text-green"><span class="pulse-indicator"></span> Active</span>
+                </div>
+              </a>
+              <a href="https://vendor.raigroups.in" target="_blank" rel="noopener" class="dash-card card-purple">
+                <i class="fa-solid fa-truck-field"></i>
+                <div class="dash-card-info">
+                  <span class="card-label">Vendor Portal</span>
+                  <span class="card-status text-green"><span class="pulse-indicator"></span> Active</span>
+                </div>
+              </a>
+            </div>
+            <div class="dash-row">
+              <a href="https://support.raigroups.in" target="_blank" rel="noopener" class="dash-card card-red">
+                <i class="fa-solid fa-headset"></i>
+                <div class="dash-card-info">
+                  <span class="card-label">Support Desk</span>
+                  <span class="card-status text-green"><span class="pulse-indicator"></span> Active</span>
+                </div>
+              </a>
+              <a href="https://docs.raigroups.in" target="_blank" rel="noopener" class="dash-card card-amber">
+                <i class="fa-solid fa-book-open"></i>
+                <div class="dash-card-info">
+                  <span class="card-label">Documentation</span>
+                  <span class="card-status text-green"><span class="pulse-indicator"></span> Active</span>
+                </div>
+              </a>
+            </div>
+            <div class="dash-row">
+              <a href="https://erp.raigroups.in" target="_blank" rel="noopener" class="dash-card card-emerald">
+                <i class="fa-solid fa-gears"></i>
+                <div class="dash-card-info">
+                  <span class="card-label">ERP / CRM Desk</span>
+                  <span class="card-status text-green"><span class="pulse-indicator"></span> Active</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Our Diverse Businesses</h2>
+        <p>RISHABH & BROTHERS SERVICES operates in key industries, driving economic value and seamless product flow across markets.</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-industry"></i></div>
+          <h3>Manufacturing & Infrastructure</h3>
+          <p>Delivering high-quality industrial components and sustainable infrastructure solutions engineered for durability and efficiency.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <h3>Logistics & Supply Chain</h3>
+          <p>Optimizing warehouse systems, fast transport, and inventory management for domestic and international vendors.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <h3>Wholesale Trading</h3>
+          <p>Bridging manufacturers and retail chains with bulk trading pipelines, prompt delivery schedules, and clear invoicing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <div class="badge">Enterprise Philosophy</div>
+          <h2>Simplifying Operations, Driving Growth</h2>
+          <p>RISHABH & BROTHERS SERVICES is built on operational excellence, speed, and integrity. Our digital platform reflects these core principles by connecting our clients, vendors, and management under one integrated umbrella.</p>
+          <p>By leveraging secure, automated cloud servers and robust document management practices, we guarantee transparency in invoicing, efficiency in shipping, and security for private client data.</p>
+          
+          <div class="stat-container">
+            <div class="stat-item">
+              <span class="stat-num">99.9%</span>
+              <span class="stat-lbl">Uptime Commitment</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-lbl">GDPR & GST Compliant</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">256-bit</span>
+              <span class="stat-lbl">Data Encryption</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-wrapper">
+          <div class="security-infocard">
+            <h3><i class="fa-solid fa-shield-halved text-blue"></i> Platform Security</h3>
+            <p>Our infrastructure operates with role-based permissions, absolute session encryption (HTTPS/SSL), and offsite daily backups, safeguarding sensitive commercial files from unauthorized leaks.</p>
+            <div class="security-checklist">
+              <div class="check-line"><i class="fa-solid fa-shield"></i> Automatic IP Lockouts</div>
+              <div class="check-line"><i class="fa-solid fa-shield"></i> Zoho Mail Integration</div>
+              <div class="check-line"><i class="fa-solid fa-shield"></i> Offsite 3-2-1 Backups</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have questions about registration or portal access? Our technical and sales teams are here to assist you.</p>
+          
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
+              <div class="info-text">
+                <span class="info-label">Support Email</span>
+                <a href="mailto:support@raigroups.in" class="info-val">support@raigroups.in</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon"><i class="fa-solid fa-tags"></i></span>
+              <div class="info-text">
+                <span class="info-label">Sales Department</span>
+                <a href="mailto:sales@raigroups.in" class="info-val">sales@raigroups.in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form id="contactForm" class="contact-form">
+            <h3>Send a Message</h3>
+            <div class="form-group">
+              <label for="formName">Full Name</label>
+              <input type="text" id="formName" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label for="formEmail">Email Address</label>
+              <input type="email" id="formEmail" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+              <label for="formSubject">Subject</label>
+              <input type="text" id="formSubject" name="subject" required placeholder="Topic of inquiry">
+            </div>
+            <div class="form-group">
+              <label for="formMessage">Message</label>
+              <textarea id="formMessage" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+          <div id="formSuccess" class="form-success-message hidden">
+            <i class="fa-regular fa-circle-check text-green"></i>
+            <h3>Message Sent!</h3>
+            <p>Thank you for contacting RISHABH & BROTHERS SERVICES. Our support team will get back to you shortly.</p>
+            <button id="resetFormBtn" class="btn btn-secondary">Send another message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-accent">RISHABH</span> & BROTHERS SERVICES</a>
+        <p>A unified digital ecosystem managing trading, logistics, manufacturing, and supply chains.</p>
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Our Businesses</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://mail.raigroups.in" target="_blank" rel="noopener">Zoho Mail</a></li>
+          <li><a href="https://docs.raigroups.in" target="_blank" rel="noopener">SOP Manuals</a></li>
+          <li><a href="https://status.raigroups.in" target="_blank" rel="noopener">Server Status</a></li>
+          <li><a href="#contact">Report Issue</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Portals</h4>
+        <ul>
+          <li><a href="https://customer.raigroups.in" target="_blank" rel="noopener">Customer Portal</a></li>
+          <li><a href="https://vendor.raigroups.in" target="_blank" rel="noopener">Supplier Portal</a></li>
+          <li><a href="https://support.raigroups.in" target="_blank" rel="noopener">Helpdesk</a></li>
+          <li><a href="https://erp.raigroups.in" target="_blank" rel="noopener">ERP Bench Login</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>&copy; 2026 RISHABH & BROTHERS SERVICES. All rights reserved. Consolidated Platform powered by ERPNext.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
 </body>
 </html>
