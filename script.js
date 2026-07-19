@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h4>Welcome, ${userName}!</h4>
           <p>${userEmail}</p>
           <div class="profile-actions">
-            <a href="https://erp.raigroups.in/portal" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; text-decoration: none;">
+            <a href="https://erp.raigroups.in/me" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center; text-decoration: none;">
               <i class="fa-solid fa-chart-line"></i> Open Client Dashboard
             </a>
             <button id="logoutBtn" class="btn btn-secondary" style="width: 100%; justify-content: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main); margin-top: 10px;">
