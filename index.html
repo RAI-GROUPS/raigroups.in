@@ -38,9 +38,8 @@
         <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <button id="loginSignupBtn" class="cta-btn">Login / Signup</button>
-        <button id="empSidebarToggle" class="theme-btn" aria-label="Employee Portals" style="border-radius: 8px; width: auto; padding: 0 12px; font-size: 14px; gap: 6px; border-color: var(--border-color); color: var(--text-main);">
-          <i class="fa-solid fa-bars"></i> Staff
+        <button id="portalSidebarToggle" class="theme-btn" aria-label="Open portal menu" style="border-radius: 8px; border-color: var(--border-color); color: var(--text-main);">
+          <i class="fa-solid fa-bars"></i>
         </button>
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
           <i class="fa-solid fa-bars"></i>
@@ -58,7 +57,7 @@
         <h1>Empowering Businesses, <span class="text-gradient">Connecting Ecosystems</span></h1>
         <p class="hero-lead">A unified digital gateway designed for RISHABH & BROTHERS SERVICES customers and suppliers. Scale operations, manage logistics, and trade seamlessly on a single secure platform.</p>
         <div class="hero-actions">
-          <button class="btn btn-primary open-portal-btn"><i class="fa-solid fa-users"></i> Client Access</button>
+          <button id="heroPortalBtn" class="btn btn-primary"><i class="fa-solid fa-users"></i> Client Access</button>
           <a href="#services" class="btn btn-secondary">Explore Businesses</a>
         </div>
       </div>
@@ -241,8 +240,8 @@
       <div class="footer-links">
         <h4>Portals</h4>
         <ul>
-          <li><button class="footer-btn open-portal-btn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Customer Portal</button></li>
-          <li><button class="footer-btn open-portal-btn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Supplier Portal</button></li>
+          <li><button class="footer-btn" id="footerCustomerBtn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Customer Portal</button></li>
+          <li><button class="footer-btn" id="footerVendorBtn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Supplier Portal</button></li>
         </ul>
       </div>
     </div>
@@ -259,78 +258,80 @@
   </footer>
 
   <!-- Custom JS -->
-  <!-- Employee Portals Sidebar -->
-  <div id="empSidebar" class="emp-sidebar">
+  <!-- Enterprise Portals Sidebar -->
+  <div id="portalSidebar" class="emp-sidebar" style="overflow-y: auto;">
     <div class="sidebar-header">
-      <h3>Employee Portals</h3>
-      <button id="empSidebarClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <h3 style="font-size: 20px; font-weight: 700; color: var(--text-main); margin: 0;">Enterprise Hub</h3>
+      <button id="portalSidebarClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
     </div>
-    <div class="sidebar-body">
-      <p class="sidebar-desc">Internal system links for R&BS staff and administrators.</p>
-      <a href="https://erp.raigroups.in/app" target="_blank" rel="noopener" class="sidebar-link">
-        <i class="fa-solid fa-gears"></i>
-        <div>
-          <span>ERP / CRM Desk</span>
-          <small>Business admin backend</small>
+    <div class="sidebar-body" style="gap: 20px; display: flex; flex-direction: column;">
+      <p class="sidebar-desc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 5px;">Access corporate workspaces, client portals, and mail tools.</p>
+      
+      <!-- Client Section -->
+      <div class="sidebar-section">
+        <h4 style="font-size: 11px; text-transform: uppercase; color: var(--primary-color); margin-bottom: 10px; font-weight: 700; letter-spacing: 1px;">Client Portals</h4>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="https://customer.raigroups.in/me" target="_blank" rel="noopener" class="sidebar-link">
+            <i class="fa-solid fa-users"></i>
+            <div>
+              <span>Customer Portal</span>
+              <small>Invoices, projects & support</small>
+            </div>
+          </a>
+          <a href="https://vendor.raigroups.in/me" target="_blank" rel="noopener" class="sidebar-link">
+            <i class="fa-solid fa-truck-field"></i>
+            <div>
+              <span>Vendor Portal</span>
+              <small>Orders & quotes submission</small>
+            </div>
+          </a>
         </div>
-      </a>
-      <a href="https://support.raigroups.in/portal" target="_blank" rel="noopener" class="sidebar-link">
-        <i class="fa-solid fa-headset"></i>
-        <div>
-          <span>Support Desk</span>
-          <small>Helpdesk ticketing panel</small>
+      </div>
+
+      <!-- Employee Section -->
+      <div class="sidebar-section">
+        <h4 style="font-size: 11px; text-transform: uppercase; color: var(--secondary-color); margin-bottom: 10px; font-weight: 700; letter-spacing: 1px;">Employee Portals</h4>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="https://erp.raigroups.in/app" target="_blank" rel="noopener" class="sidebar-link">
+            <i class="fa-solid fa-gears"></i>
+            <div>
+              <span>ERP / CRM Desk</span>
+              <small>Business admin backend</small>
+            </div>
+          </a>
+          <a href="https://support.raigroups.in/portal" target="_blank" rel="noopener" class="sidebar-link">
+            <i class="fa-solid fa-headset"></i>
+            <div>
+              <span>Support Desk</span>
+              <small>Helpdesk ticketing panel</small>
+            </div>
+          </a>
+          <a href="https://docs.raigroups.in" target="_blank" rel="noopener" class="sidebar-link">
+            <i class="fa-solid fa-book-open"></i>
+            <div>
+              <span>SOP Documentation</span>
+              <small>Wiki manuals & guides</small>
+            </div>
+          </a>
         </div>
-      </a>
-      <a href="https://docs.raigroups.in" target="_blank" rel="noopener" class="sidebar-link">
-        <i class="fa-solid fa-book-open"></i>
-        <div>
-          <span>SOP Documentation</span>
-          <small>Wiki manuals & guides</small>
+      </div>
+
+      <!-- Mail Section -->
+      <div class="sidebar-section">
+        <h4 style="font-size: 11px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; font-weight: 700; letter-spacing: 1px;">Mail Services</h4>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="https://mail.raigroups.in" target="_blank" rel="noopener" class="sidebar-link">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <span>Zoho Mail Login</span>
+              <small>Corporate webmail access</small>
+            </div>
+          </a>
         </div>
-      </a>
-      <a href="https://mail.raigroups.in" target="_blank" rel="noopener" class="sidebar-link">
-        <i class="fa-solid fa-envelope"></i>
-        <div>
-          <span>Mail Server</span>
-          <small>Zoho corporate inbox</small>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
-
-  <!-- Login/Signup Modal -->
-  <div id="loginModal" class="login-modal">
-    <div class="modal-content glass-card">
-      <div class="modal-header">
-        <h3 id="modalTitle">Customer & Vendor Login</h3>
-        <button id="modalClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
-      </div>
-      <div class="modal-body" id="modalBody" style="padding: 10px 0 0 0;">
-        <p class="sidebar-desc" style="margin-bottom: 20px;">Select your workspace portal to log in or register a new account.</p>
-        
-        <!-- Portal Options -->
-        <div class="portal-options-container" style="display: flex; flex-direction: column; gap: 15px;">
-          <a href="https://customer.raigroups.in/me" target="_blank" rel="noopener" class="sidebar-link" style="padding: 18px; border-color: var(--primary-color); display: flex; align-items: center; gap: 16px; background-color: var(--bg-secondary); border-radius: 12px; text-decoration: none; transition: all 0.2s ease;">
-            <i class="fa-solid fa-users" style="font-size: 24px; color: var(--primary-color);"></i>
-            <div style="display: flex; flex-direction: column;">
-              <span style="font-size: 16px; font-weight: 700; color: var(--text-main);">Customer Portal Login</span>
-              <small style="font-size: 11px; color: var(--text-muted);">Access invoices, projects, and raising support tickets</small>
-            </div>
-          </a>
-          
-          <a href="https://vendor.raigroups.in/me" target="_blank" rel="noopener" class="sidebar-link" style="padding: 18px; border-color: var(--secondary-color); display: flex; align-items: center; gap: 16px; background-color: var(--bg-secondary); border-radius: 12px; text-decoration: none; transition: all 0.2s ease;">
-            <i class="fa-solid fa-truck-field" style="font-size: 24px; color: var(--secondary-color);"></i>
-            <div style="display: flex; flex-direction: column;">
-              <span style="font-size: 16px; font-weight: 700; color: var(--text-main);">Vendor Portal Login</span>
-              <small style="font-size: 11px; color: var(--text-muted);">Manage purchase orders and submit supplier quotations</small>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="modalOverlay" class="modal-overlay"></div>
 
   <script src="script.js"></script>
 </body>

@@ -186,56 +186,36 @@ document.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(styleSheet);
 
   // =========================================================================
-  // Employee Sidebar Toggle
+  // Unified Portal Sidebar Drawer Toggle
   // =========================================================================
-  const empSidebarToggle = document.getElementById('empSidebarToggle');
-  const empSidebar = document.getElementById('empSidebar');
-  const empSidebarClose = document.getElementById('empSidebarClose');
+  const portalSidebarToggle = document.getElementById('portalSidebarToggle');
+  const portalSidebar = document.getElementById('portalSidebar');
+  const portalSidebarClose = document.getElementById('portalSidebarClose');
   const sidebarOverlay = document.getElementById('sidebarOverlay');
+  
+  const heroPortalBtn = document.getElementById('heroPortalBtn');
+  const footerCustomerBtn = document.getElementById('footerCustomerBtn');
+  const footerVendorBtn = document.getElementById('footerVendorBtn');
 
-  if (empSidebarToggle && empSidebar && empSidebarClose && sidebarOverlay) {
+  if (portalSidebar && sidebarOverlay) {
     const openSidebar = () => {
-      empSidebar.classList.add('active');
+      portalSidebar.classList.add('active');
       sidebarOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     };
 
     const closeSidebar = () => {
-      empSidebar.classList.remove('active');
+      portalSidebar.classList.remove('active');
       sidebarOverlay.classList.remove('active');
       document.body.style.overflow = '';
     };
 
-    empSidebarToggle.addEventListener('click', openSidebar);
-    empSidebarClose.addEventListener('click', closeSidebar);
-    sidebarOverlay.addEventListener('click', closeSidebar);
-  }
-
-  // =========================================================================
-  // Custom Login/Signup Modal
-  // =========================================================================
-  const loginModal = document.getElementById('loginModal');
-  const modalOverlay = document.getElementById('modalOverlay');
-  const modalClose = document.getElementById('modalClose');
-  const loginSignupBtn = document.getElementById('loginSignupBtn');
-  const openPortalBtns = document.querySelectorAll('.open-portal-btn');
-
-  if (loginModal && modalOverlay) {
-    const openModal = () => {
-      loginModal.classList.add('active');
-      modalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
-
-    const closeModal = () => {
-      loginModal.classList.remove('active');
-      modalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    if (loginSignupBtn) loginSignupBtn.addEventListener('click', openModal);
-    if (modalClose) modalClose.addEventListener('click', closeModal);
-    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
-    openPortalBtns.forEach(btn => btn.addEventListener('click', openModal));
+    if (portalSidebarToggle) portalSidebarToggle.addEventListener('click', openSidebar);
+    if (portalSidebarClose) portalSidebarClose.addEventListener('click', closeSidebar);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+    
+    if (heroPortalBtn) heroPortalBtn.addEventListener('click', openSidebar);
+    if (footerCustomerBtn) footerCustomerBtn.addEventListener('click', openSidebar);
+    if (footerVendorBtn) footerVendorBtn.addEventListener('click', openSidebar);
   }
 });
