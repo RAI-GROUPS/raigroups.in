@@ -306,54 +306,26 @@
         <h3 id="modalTitle">Customer & Vendor Login</h3>
         <button id="modalClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <div class="modal-body" id="modalBody">
-        <!-- Tab Headers -->
-        <div class="modal-tabs" id="modalTabs">
-          <button id="loginTabBtn" class="tab-btn active">Login</button>
-          <button id="signupTabBtn" class="tab-btn">Sign Up</button>
-        </div>
-
-        <!-- Login Form -->
-        <div id="modalLoginForm" class="modal-form-content">
-          <form id="websiteLoginForm">
-            <div class="form-group">
-              <label for="modalEmail">Email Address</label>
-              <input type="email" id="modalEmail" name="usr" required placeholder="Enter your registered email">
+      <div class="modal-body" id="modalBody" style="padding: 10px 0 0 0;">
+        <p class="sidebar-desc" style="margin-bottom: 20px;">Select your workspace portal to log in or register a new account.</p>
+        
+        <!-- Portal Options -->
+        <div class="portal-options-container" style="display: flex; flex-direction: column; gap: 15px;">
+          <a href="https://customer.raigroups.in/me" target="_blank" rel="noopener" class="sidebar-link" style="padding: 18px; border-color: var(--primary-color); display: flex; align-items: center; gap: 16px; background-color: var(--bg-secondary); border-radius: 12px; text-decoration: none; transition: all 0.2s ease;">
+            <i class="fa-solid fa-users" style="font-size: 24px; color: var(--primary-color);"></i>
+            <div style="display: flex; flex-direction: column;">
+              <span style="font-size: 16px; font-weight: 700; color: var(--text-main);">Customer Portal Login</span>
+              <small style="font-size: 11px; color: var(--text-muted);">Access invoices, projects, and raising support tickets</small>
             </div>
-            <div class="form-group">
-              <label for="modalPassword">Password</label>
-              <input type="password" id="modalPassword" name="pwd" required placeholder="Enter your password">
-            </div>
-            <div class="login-error-msg" id="loginErrorMsg" style="color: var(--card-red-glow); font-size: 13px; margin: 8px 0; font-weight: 600;"></div>
-            <button type="submit" class="btn btn-primary submit-btn" style="width: 100%; justify-content: center; margin-top: 15px;">
-              <i class="fa-solid fa-right-to-bracket"></i> Login to Portal
-            </button>
-          </form>
-          <div class="form-divider" style="text-align: center; margin: 15px 0; position: relative;">
-            <span style="background: var(--bg-primary); padding: 0 10px; color: var(--text-muted); font-size: 12px; z-index: 1; position: relative;">OR</span>
-            <div style="position: absolute; top: 50%; left: 0; right: 0; border-top: 1px solid var(--border-color); z-index: 0;"></div>
-          </div>
-          <a href="https://erp.raigroups.in/login#login-with-email-link" target="_blank" class="btn btn-secondary" style="width: 100%; justify-content: center; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-main);">
-            <i class="fa-solid fa-envelope"></i> Login with Email Link
           </a>
-        </div>
-
-        <!-- Signup Form -->
-        <div id="modalSignupForm" class="modal-form-content hidden">
-          <form id="websiteSignupForm">
-            <div class="form-group">
-              <label for="signupName">Full Name</label>
-              <input type="text" id="signupName" required placeholder="Enter your name">
+          
+          <a href="https://vendor.raigroups.in/me" target="_blank" rel="noopener" class="sidebar-link" style="padding: 18px; border-color: var(--secondary-color); display: flex; align-items: center; gap: 16px; background-color: var(--bg-secondary); border-radius: 12px; text-decoration: none; transition: all 0.2s ease;">
+            <i class="fa-solid fa-truck-field" style="font-size: 24px; color: var(--secondary-color);"></i>
+            <div style="display: flex; flex-direction: column;">
+              <span style="font-size: 16px; font-weight: 700; color: var(--text-main);">Vendor Portal Login</span>
+              <small style="font-size: 11px; color: var(--text-muted);">Manage purchase orders and submit supplier quotations</small>
             </div>
-            <div class="form-group">
-              <label for="signupEmail">Email Address</label>
-              <input type="email" id="signupEmail" required placeholder="Enter your email">
-            </div>
-            <div class="signup-error-msg" id="signupErrorMsg" style="color: var(--card-red-glow); font-size: 13px; margin: 8px 0; font-weight: 600;"></div>
-            <button type="submit" class="btn btn-primary submit-btn" style="width: 100%; justify-content: center; margin-top: 15px;">
-              <i class="fa-solid fa-user-plus"></i> Register Account
-            </button>
-          </form>
+          </a>
         </div>
       </div>
     </div>
