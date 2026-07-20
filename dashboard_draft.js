@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ticks: { 
               color: chartOptions.textColor, 
               font: { family: chartOptions.fontFamily },
-              callback: (value) => '$' + value + 'k'
+              callback: (value) => '₹' + value + 'k'
             }
           }
         }
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Clean value parsing
       const numericValue = parseFloat(valueInput.replace(/[^0-9.]/g, '')) || 0;
-      const formattedValue = '$' + numericValue.toLocaleString('en-US', { maximumFractionDigits: 0 });
+      const formattedValue = '₹' + numericValue.toLocaleString('en-IN', { maximumFractionDigits: 0 });
 
       // Form submit button animation
       const submitBtn = leadForm.querySelector('button[type="submit"]');
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const currentTotalStr = activePipelineNum.textContent.replace(/[^0-9]/g, '');
           const currentTotal = parseFloat(currentTotalStr) || 452800;
           const newTotal = currentTotal + numericValue;
-          activePipelineNum.textContent = '$' + newTotal.toLocaleString('en-US');
+          activePipelineNum.textContent = '₹' + newTotal.toLocaleString('en-IN');
         }
 
         // Update Today Leads Count
