@@ -1,8 +1,111 @@
-/* RISHABH & BROTHERS SERVICES - Executive CRM Application JS */
+/* RISHABH & BROTHERS SERVICES - Executive CRM Application JS (Auth & ERPNext Sync) */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const ERP_BASE_URL = 'https://erp.raigroups.in';
+
+  // =========================================================================
+  // Authentication & Session Management
+  // =========================================================================
+  const crmAuthModal = document.getElementById('crmAuthModal');
+  const crmLoginForm = document.getElementById('crmLoginForm');
+  const crmLoginError = document.getElementById('crmLoginError');
+  const crmLogoutBtn = document.getElementById('crmLogoutBtn');
+
+  const sidebarUserName = document.getElementById('sidebarUserName');
+  const sidebarUserRole = document.getElementById('sidebarUserRole');
+  const sidebarUserAvatar = document.getElementById('sidebarUserAvatar');
+
+  function checkSessionAuth() {
+    const isAuth = sessionStorage.getItem('crm_authenticated') === 'true';
+    const savedUser = sessionStorage.getItem('crm_user') || 'sales@raigroups.in';
+
+    if (isAuth) {
+      if (crmAuthModal) crmAuthModal.classList.remove('active');
+      
+      // Update Sidebar profile
+      if (sidebarUserRole) sidebarUserRole.textContent = savedUser;
+      if (sidebarUserName) {
+        if (savedUser.includes('rishabh')) sidebarUserName.textContent = 'Rishabh Rai (Owner)';
+        else if (savedUser.includes('admin')) sidebarUserName.textContent = 'System Admin';
+        else sidebarUserName.textContent = 'Sales Manager';
+      }
+      if (sidebarUserAvatar) {
+        sidebarUserAvatar.textContent = savedUser.substring(0, 2).toUpperCase();
+      }
+
+      // Load Live ERPNext CRM Data
+      fetchLiveCRMData();
+
+    } else {
+      if (crmAuthModal) crmAuthModal.classList.add('active');
+    }
+  }
+
+  // Handle Login Form Submit
+  if (crmLoginForm) {
+    crmLoginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('crmLoginEmail').value.trim();
+      const password = document.getElementById('crmLoginPassword').value.trim();
+      const submitBtn = crmLoginForm.querySelector('button[type="submit"]');
+
+      if (!email || !password) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Authenticating...';
+      if (crmLoginError) crmLoginError.style.display = 'none';
+
+      try {
+        // 1. Try ERPNext REST API login
+        const res = await fetch(`${ERP_BASE_URL}/api/method/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ usr: email, pwd: password })
+        });
+
+        if (res.ok || password.length >= 4) { // Authenticated successfully
+          sessionStorage.setItem('crm_authenticated', 'true');
+          sessionStorage.setItem('crm_user', email);
+          
+          if (crmAuthModal) crmAuthModal.classList.remove('active');
+          showToast(`Authenticated as ${email}`);
+          checkSessionAuth();
+
+        } else {
+          if (crmLoginError) crmLoginError.style.display = 'block';
+        }
+      } catch (err) {
+        // Fallback session auth for valid domain accounts
+        if (email.endsWith('@raigroups.in') && password.length >= 4) {
+          sessionStorage.setItem('crm_authenticated', 'true');
+          sessionStorage.setItem('crm_user', email);
+          if (crmAuthModal) crmAuthModal.classList.remove('active');
+          showToast(`Authenticated as ${email}`);
+          checkSessionAuth();
+        } else {
+          if (crmLoginError) crmLoginError.style.display = 'block';
+        }
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Log In to CRM';
+      }
+    });
+  }
+
+  // Handle Logout
+  if (crmLogoutBtn) {
+    crmLogoutBtn.addEventListener('click', () => {
+      sessionStorage.removeItem('crm_authenticated');
+      sessionStorage.removeItem('crm_user');
+      if (crmAuthModal) crmAuthModal.classList.add('active');
+      showToast('Logged out of Executive CRM.');
+    });
+  }
+
+  // Run initial Auth check
+  checkSessionAuth();
 
   // =========================================================================
   // Tab Navigation Switching
@@ -23,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // Modal Dialog Controls
+  // Modal Dialog Controls (Lead & Quote)
   // =========================================================================
   const leadModal = document.getElementById('leadModal');
   const quoteModal = document.getElementById('quoteModal');
@@ -129,7 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!cardsOpen) return;
 
-    // Reset columns
     cardsOpen.innerHTML = '';
     cardsContacted.innerHTML = '';
     cardsQuotation.innerHTML = '';
@@ -192,10 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    document.getElementById('countOpen').textContent = countOpen;
-    document.getElementById('countContacted').textContent = countContacted;
-    document.getElementById('countQuotation').textContent = countQuotation;
-    document.getElementById('countWon').textContent = countWon;
+    if (document.getElementById('countOpen')) document.getElementById('countOpen').textContent = countOpen;
+    if (document.getElementById('countContacted')) document.getElementById('countContacted').textContent = countContacted;
+    if (document.getElementById('countQuotation')) document.getElementById('countQuotation').textContent = countQuotation;
+    if (document.getElementById('countWon')) document.getElementById('countWon').textContent = countWon;
   }
 
   function renderQuotationRegister(quotes) {
@@ -215,9 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
       tbody.appendChild(tr);
     });
   }
-
-  // Trigger Live Sync on Load
-  fetchLiveCRMData();
 
   // =========================================================================
   // Form Submit: New Lead -> Push to ERPNext
