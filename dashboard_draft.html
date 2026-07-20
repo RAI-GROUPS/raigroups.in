@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RISHABH & BROTHERS SERVICES - Executive Dashboard</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- ChartJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="dashboard_draft.css">
+</head>
+<body class="light-theme">
+
+  <!-- Dashboard Header -->
+  <header class="dashboard-header">
+    <div class="container header-flex">
+      <div class="header-brand">
+        <img src="logo.png" alt="RISHABH & BROTHERS Logo">
+        <div class="header-title-wrapper">
+          <h1>RISHABH & BROTHERS SERVICES</h1>
+          <p>Executive Dashboard Gateway</p>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="index.html" class="btn btn-secondary">
+          <i class="fa-solid fa-arrow-left-long"></i> Back to Main Site
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- Section Title -->
+    <div class="section-title">
+      <h2>Executive Overview</h2>
+    </div>
+
+    <!-- Metrics Cards Grid -->
+    <div class="metrics-grid">
+      
+      <!-- Metric Card 1: Governance Score -->
+      <div class="metric-card">
+        <div class="metric-flex">
+          <div class="metric-info">
+            <h3>Governance Score</h3>
+            <div class="metric-value">78%</div>
+            <div class="metric-change up">
+              <i class="fa-solid fa-arrow-up"></i> 12% <span style="font-weight: 400; color: var(--text-muted);">vs last 30 days</span>
+            </div>
+          </div>
+          <div class="metric-graphic">
+            <!-- SVG Circular Progress Indicator -->
+            <svg viewBox="0 0 36 36" style="width: 64px; height: 64px;">
+              <path class="circle-bg"
+                style="fill: none; stroke: var(--border-color); stroke-width: 3.5;"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path class="circle"
+                style="fill: none; stroke: var(--color-primary); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 78, 100;"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric Card 2: Monthly Cost -->
+      <div class="metric-card accent">
+        <div class="metric-flex">
+          <div class="metric-info">
+            <h3>Monthly Cost</h3>
+            <div class="metric-value">$842K</div>
+            <div class="metric-change up">
+              <i class="fa-solid fa-arrow-up"></i> 8.4% <span style="font-weight: 400; color: var(--text-muted);">vs last month</span>
+            </div>
+          </div>
+          <div class="metric-graphic">
+            <!-- Sparkline Trend Vector -->
+            <svg viewBox="0 0 100 40" style="width: 72px; height: 40px; margin-top: 12px;">
+              <path d="M0,35 Q15,30 30,22 T60,25 T90,5 T100,2" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"></path>
+              <path d="M0,35 Q15,30 30,22 T60,25 T90,5 T100,2 L100,40 L0,40 Z" fill="rgba(217, 119, 6, 0.05)"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric Card 3: Compliance -->
+      <div class="metric-card">
+        <div class="metric-flex">
+          <div class="metric-info">
+            <h3>Compliance</h3>
+            <div class="metric-value">92%</div>
+            <div class="metric-change up">
+              <i class="fa-solid fa-arrow-up"></i> 6% <span style="font-weight: 400; color: var(--text-muted);">vs last 30 days</span>
+            </div>
+          </div>
+          <div class="metric-graphic">
+            <svg viewBox="0 0 36 36" style="width: 64px; height: 64px;">
+              <path class="circle-bg"
+                style="fill: none; stroke: var(--border-color); stroke-width: 3.5;"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+              <path class="circle"
+                style="fill: none; stroke: var(--color-success); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 92, 100;"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric Card 4: High Priority Gaps -->
+      <div class="metric-card accent">
+        <div class="metric-flex">
+          <div class="metric-info">
+            <h3>High Priority Gaps</h3>
+            <div class="metric-value" style="color: var(--color-danger);">24</div>
+            <div class="metric-change down" style="color: var(--color-success);">
+              <i class="fa-solid fa-arrow-down"></i> 8 <span style="font-weight: 400; color: var(--text-muted);">vs last 30 days</span>
+            </div>
+          </div>
+          <div class="metric-graphic" style="display: flex; align-items: center; justify-content: center; height: 64px;">
+            <i class="fa-solid fa-triangle-exclamation" style="font-size: 32px; color: var(--color-danger);"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Analytics Charts Section -->
+    <div class="charts-grid">
+      
+      <!-- Trend Line Chart -->
+      <div class="chart-card">
+        <h3>Governance Gaps Trend</h3>
+        <div class="chart-wrapper">
+          <canvas id="trendChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Donut Categories Chart -->
+      <div class="chart-card">
+        <h3>Top Gap Categories</h3>
+        <div class="chart-wrapper">
+          <canvas id="categoryChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Unified Insights Section -->
+    <section class="insights-section">
+      <h3>Unified Insights</h3>
+      <div class="insights-grid">
+        
+        <div class="insight-card">
+          <div class="insight-icon-wrapper icon-blue">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </div>
+          <h4>Cloud Changes</h4>
+          <div class="insight-value">142</div>
+          <p class="insight-desc">Changes detected in resources over the last 7 days (+18%)</p>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-wrapper icon-green">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+          <h4>Cost Signals</h4>
+          <div class="insight-value">$128K</div>
+          <p class="insight-desc">Potential monthly savings identified in unused instances (+15%)</p>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-wrapper icon-purple">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4>Compliance Posture</h4>
+          <div class="insight-value">92%</div>
+          <p class="insight-desc">Compliant cloud resources verified in latest audit (+6%)</p>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-wrapper icon-orange">
+            <i class="fa-solid fa-circle-user"></i>
+          </div>
+          <h4>Ownership Clarity</h4>
+          <div class="insight-value">87%</div>
+          <p class="insight-desc">Resources mapped with active department tags (+9%)</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Recent Active Gaps Data Table -->
+    <div class="data-table-card">
+      <div class="table-header-flex">
+        <h3>Recent High Priority Gaps</h3>
+        <span class="badge badge-warning"><i class="fa-solid fa-circle-info"></i> Audit Status: Active</span>
+      </div>
+      
+      <div class="table-wrapper">
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>Issue Description</th>
+              <th>Category</th>
+              <th>Source Domain</th>
+              <th>Action Required</th>
+              <th>Discovered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight: 600;"><i class="fa-solid fa-circle-exclamation" style="color: var(--color-danger); margin-right: 6px;"></i> S3 bucket public access detected</td>
+              <td><span class="badge badge-danger">Security</span></td>
+              <td>customer.raigroups.in</td>
+              <td>Enable Block Public Access setting</td>
+              <td>2h ago</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;"><i class="fa-solid fa-triangle-exclamation" style="color: var(--color-accent); margin-right: 6px;"></i> Unattached EBS storage volumes</td>
+              <td><span class="badge badge-warning">Cost</span></td>
+              <td>erp.raigroups.in</td>
+              <td>Verify and delete inactive volumes</td>
+              <td>5h ago</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;"><i class="fa-solid fa-circle-question" style="color: var(--text-muted); margin-right: 6px;"></i> Orphaned resources without owner tag</td>
+              <td><span class="badge badge-success">Ownership</span></td>
+              <td>vendor.raigroups.in</td>
+              <td>Assign owner tags to virtual machine</td>
+              <td>1d ago</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;"><i class="fa-solid fa-circle-exclamation" style="color: var(--color-danger); margin-right: 6px;"></i> Open security group port 22 to public</td>
+              <td><span class="badge badge-danger">Security</span></td>
+              <td>support.raigroups.in</td>
+              <td>Restrict SSH access to corporate IP range</td>
+              <td>12h ago</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;"><i class="fa-solid fa-triangle-exclamation" style="color: var(--color-accent); margin-right: 6px;"></i> Unused RDS database instance</td>
+              <td><span class="badge badge-warning">Cost</span></td>
+              <td>erp.raigroups.in</td>
+              <td>Stop or snapshot database to reduce fees</td>
+              <td>1d ago</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Connected Cloud Accounts / Subdomains Section -->
+    <div class="accounts-section">
+      <div class="accounts-card">
+        <h3>Connected Operations Portals</h3>
+        <div class="accounts-grid">
+          
+          <a href="https://erp.raigroups.in/app" target="_blank" class="account-item">
+            <i class="fa-solid fa-gears"></i>
+            <span>ERP Desk Backend</span>
+          </a>
+
+          <a href="https://customer.raigroups.in/login" target="_blank" class="account-item">
+            <i class="fa-solid fa-users"></i>
+            <span>Customer Portal</span>
+          </a>
+
+          <a href="https://vendor.raigroups.in/login" target="_blank" class="account-item">
+            <i class="fa-solid fa-truck-field"></i>
+            <span>Vendor Portal</span>
+          </a>
+
+          <a href="https://mail.raigroups.in" target="_blank" class="account-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Zoho Corporate Mail</span>
+          </a>
+
+        </div>
+      </div>
+      
+      <!-- Quick Status Column -->
+      <div class="accounts-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h3>System Status</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">All corporate services and subdomain gateways are operational.</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="width: 10px; height: 10px; background-color: var(--color-success); border-radius: 50%; display: inline-block;"></span>
+          <span style="font-size: 13px; font-weight: 700; color: var(--color-success);">99.9% Services Uptime</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Custom script -->
+  <script src="dashboard_draft.js"></script>
+</body>
+</html>
