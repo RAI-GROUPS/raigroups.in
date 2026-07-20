@@ -279,4 +279,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
+  // =========================================================================
+  // Mobile Sidebar Collapse Toggle
+  // =========================================================================
+  const sidebarCollapse = document.getElementById('sidebarCollapse');
+  const sidebar = document.querySelector('.app-sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+
+  if (sidebarCollapse && sidebar && overlay) {
+    sidebarCollapse.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  }
+
 });
