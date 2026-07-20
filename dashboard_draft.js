@@ -280,11 +280,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // Mobile Sidebar Collapse Toggle
+  // Mobile Sidebar Collapse Toggle & Navigation Item Clicks
   // =========================================================================
   const sidebarCollapse = document.getElementById('sidebarCollapse');
   const sidebar = document.querySelector('.app-sidebar');
   const overlay = document.getElementById('sidebarOverlay');
+  const navItems = document.querySelectorAll('.nav-item');
 
   if (sidebarCollapse && sidebar && overlay) {
     sidebarCollapse.addEventListener('click', () => {
@@ -297,5 +298,26 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.classList.remove('active');
     });
   }
+
+  // Handle navigation item clicks to switch active state dynamically
+  navItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      const href = item.getAttribute('href');
+      
+      // If it's a dummy link, switch active class in sidebar and prevent jump
+      if (href === '#' || href === '') {
+        e.preventDefault();
+        
+        navItems.forEach(nav => nav.classList.remove('active'));
+        item.classList.add('active');
+        
+        // Auto-close sidebar on mobile after clicking
+        if (window.innerWidth <= 768 && sidebar && overlay) {
+          sidebar.classList.remove('active');
+          overlay.classList.remove('active');
+        }
+      }
+    });
+  });
 
 });
