@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RISHABH & BROTHERS SERVICES - Executive Dashboard</title>
+  <title>RISHABH & BROTHERS SERVICES - Enterprise Dashboard</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,296 +19,387 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="dashboard_draft.css">
 </head>
-<body class="light-theme">
+<body class="dark-theme">
 
-  <!-- Dashboard Header -->
-  <header class="dashboard-header">
-    <div class="container header-flex">
-      <div class="header-brand">
-        <img src="logo.png" alt="RISHABH & BROTHERS Logo">
-        <div class="header-title-wrapper">
-          <h1>RISHABH & BROTHERS SERVICES</h1>
-          <p>Executive Dashboard Gateway</p>
-        </div>
-      </div>
-      
-      <div class="header-actions">
-        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <a href="index.html" class="btn btn-secondary">
-          <i class="fa-solid fa-arrow-left-long"></i> Back to Main Site
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
+  <div class="app-wrapper">
     
-    <!-- Section Title -->
-    <div class="section-title">
-      <h2>Executive Overview</h2>
-    </div>
-
-    <!-- Metrics Cards Grid -->
-    <div class="metrics-grid">
+    <!-- LEFT SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-brand">
+        <img src="logo.png" alt="RISHABH & BROTHERS Logo">
+        <h1>RISHABH & BROTHERS<span>Consolidated Operations</span></h1>
+      </div>
       
-      <!-- Metric Card 1: Governance Score -->
-      <div class="metric-card">
-        <div class="metric-flex">
-          <div class="metric-info">
-            <h3>Governance Score</h3>
-            <div class="metric-value">78%</div>
-            <div class="metric-change up">
-              <i class="fa-solid fa-arrow-up"></i> 12% <span style="font-weight: 400; color: var(--text-muted);">vs last 30 days</span>
-            </div>
-          </div>
-          <div class="metric-graphic">
-            <!-- SVG Circular Progress Indicator -->
-            <svg viewBox="0 0 36 36" style="width: 64px; height: 64px;">
-              <path class="circle-bg"
-                style="fill: none; stroke: var(--border-color); stroke-width: 3.5;"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path class="circle"
-                style="fill: none; stroke: var(--color-primary); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 78, 100;"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-            </svg>
-          </div>
+      <div class="sidebar-navigation">
+        <!-- CRM Modules -->
+        <div class="nav-group">
+          <div class="nav-group-title">CRM & Sales</div>
+          <a href="#" class="nav-item active">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Pipeline Overview</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fa-solid fa-address-book"></i>
+            <span>Lead Directory</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Quotes & Estimates</span>
+          </a>
         </div>
-      </div>
-
-      <!-- Metric Card 2: Monthly Cost -->
-      <div class="metric-card accent">
-        <div class="metric-flex">
-          <div class="metric-info">
-            <h3>Monthly Cost</h3>
-            <div class="metric-value">$842K</div>
-            <div class="metric-change up">
-              <i class="fa-solid fa-arrow-up"></i> 8.4% <span style="font-weight: 400; color: var(--text-muted);">vs last month</span>
-            </div>
-          </div>
-          <div class="metric-graphic">
-            <!-- Sparkline Trend Vector -->
-            <svg viewBox="0 0 100 40" style="width: 72px; height: 40px; margin-top: 12px;">
-              <path d="M0,35 Q15,30 30,22 T60,25 T90,5 T100,2" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"></path>
-              <path d="M0,35 Q15,30 30,22 T60,25 T90,5 T100,2 L100,40 L0,40 Z" fill="rgba(217, 119, 6, 0.05)"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Metric Card 3: Compliance -->
-      <div class="metric-card">
-        <div class="metric-flex">
-          <div class="metric-info">
-            <h3>Compliance</h3>
-            <div class="metric-value">92%</div>
-            <div class="metric-change up">
-              <i class="fa-solid fa-arrow-up"></i> 6% <span style="font-weight: 400; color: var(--text-muted);">vs last 30 days</span>
-            </div>
-          </div>
-          <div class="metric-graphic">
-            <svg viewBox="0 0 36 36" style="width: 64px; height: 64px;">
-              <path class="circle-bg"
-                style="fill: none; stroke: var(--border-color); stroke-width: 3.5;"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-              <path class="circle"
-                style="fill: none; stroke: var(--color-success); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 92, 100;"
-                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Metric Card 4: High Priority Gaps -->
-      <div class="metric-card accent">
-        <div class="metric-flex">
-          <div class="metric-info">
-            <h3>High Priority Gaps</h3>
-            <div class="metric-value" style="color: var(--color-danger);">24</div>
-            <div class="metric-change down" style="color: var(--color-success);">
-              <i class="fa-solid fa-arrow-down"></i> 8 <span style="font-weight: 400; color: var(--text-muted);">vs last 30 days</span>
-            </div>
-          </div>
-          <div class="metric-graphic" style="display: flex; align-items: center; justify-content: center; height: 64px;">
-            <i class="fa-solid fa-triangle-exclamation" style="font-size: 32px; color: var(--color-danger);"></i>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Analytics Charts Section -->
-    <div class="charts-grid">
-      
-      <!-- Trend Line Chart -->
-      <div class="chart-card">
-        <h3>Governance Gaps Trend</h3>
-        <div class="chart-wrapper">
-          <canvas id="trendChart"></canvas>
-        </div>
-      </div>
-
-      <!-- Donut Categories Chart -->
-      <div class="chart-card">
-        <h3>Top Gap Categories</h3>
-        <div class="chart-wrapper">
-          <canvas id="categoryChart"></canvas>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Unified Insights Section -->
-    <section class="insights-section">
-      <h3>Unified Insights</h3>
-      <div class="insights-grid">
         
-        <div class="insight-card">
-          <div class="insight-icon-wrapper icon-blue">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-          </div>
-          <h4>Cloud Changes</h4>
-          <div class="insight-value">142</div>
-          <p class="insight-desc">Changes detected in resources over the last 7 days (+18%)</p>
-        </div>
-
-        <div class="insight-card">
-          <div class="insight-icon-wrapper icon-green">
-            <i class="fa-solid fa-dollar-sign"></i>
-          </div>
-          <h4>Cost Signals</h4>
-          <div class="insight-value">$128K</div>
-          <p class="insight-desc">Potential monthly savings identified in unused instances (+15%)</p>
-        </div>
-
-        <div class="insight-card">
-          <div class="insight-icon-wrapper icon-purple">
-            <i class="fa-solid fa-shield-halved"></i>
-          </div>
-          <h4>Compliance Posture</h4>
-          <div class="insight-value">92%</div>
-          <p class="insight-desc">Compliant cloud resources verified in latest audit (+6%)</p>
-        </div>
-
-        <div class="insight-card">
-          <div class="insight-icon-wrapper icon-orange">
-            <i class="fa-solid fa-circle-user"></i>
-          </div>
-          <h4>Ownership Clarity</h4>
-          <div class="insight-value">87%</div>
-          <p class="insight-desc">Resources mapped with active department tags (+9%)</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Recent Active Gaps Data Table -->
-    <div class="data-table-card">
-      <div class="table-header-flex">
-        <h3>Recent High Priority Gaps</h3>
-        <span class="badge badge-warning"><i class="fa-solid fa-circle-info"></i> Audit Status: Active</span>
-      </div>
-      
-      <div class="table-wrapper">
-        <table class="dashboard-table">
-          <thead>
-            <tr>
-              <th>Issue Description</th>
-              <th>Category</th>
-              <th>Source Domain</th>
-              <th>Action Required</th>
-              <th>Discovered</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="font-weight: 600;"><i class="fa-solid fa-circle-exclamation" style="color: var(--color-danger); margin-right: 6px;"></i> S3 bucket public access detected</td>
-              <td><span class="badge badge-danger">Security</span></td>
-              <td>customer.raigroups.in</td>
-              <td>Enable Block Public Access setting</td>
-              <td>2h ago</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 600;"><i class="fa-solid fa-triangle-exclamation" style="color: var(--color-accent); margin-right: 6px;"></i> Unattached EBS storage volumes</td>
-              <td><span class="badge badge-warning">Cost</span></td>
-              <td>erp.raigroups.in</td>
-              <td>Verify and delete inactive volumes</td>
-              <td>5h ago</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 600;"><i class="fa-solid fa-circle-question" style="color: var(--text-muted); margin-right: 6px;"></i> Orphaned resources without owner tag</td>
-              <td><span class="badge badge-success">Ownership</span></td>
-              <td>vendor.raigroups.in</td>
-              <td>Assign owner tags to virtual machine</td>
-              <td>1d ago</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 600;"><i class="fa-solid fa-circle-exclamation" style="color: var(--color-danger); margin-right: 6px;"></i> Open security group port 22 to public</td>
-              <td><span class="badge badge-danger">Security</span></td>
-              <td>support.raigroups.in</td>
-              <td>Restrict SSH access to corporate IP range</td>
-              <td>12h ago</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 600;"><i class="fa-solid fa-triangle-exclamation" style="color: var(--color-accent); margin-right: 6px;"></i> Unused RDS database instance</td>
-              <td><span class="badge badge-warning">Cost</span></td>
-              <td>erp.raigroups.in</td>
-              <td>Stop or snapshot database to reduce fees</td>
-              <td>1d ago</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Connected Cloud Accounts / Subdomains Section -->
-    <div class="accounts-section">
-      <div class="accounts-card">
-        <h3>Connected Operations Portals</h3>
-        <div class="accounts-grid">
-          
-          <a href="https://erp.raigroups.in/app" target="_blank" class="account-item">
+        <!-- ERP Modules -->
+        <div class="nav-group">
+          <div class="nav-group-title">ERP & Operations</div>
+          <a href="https://erp.raigroups.in/app" target="_blank" class="nav-item">
             <i class="fa-solid fa-gears"></i>
             <span>ERP Desk Backend</span>
           </a>
-
-          <a href="https://customer.raigroups.in/login" target="_blank" class="account-item">
+          <a href="https://customer.raigroups.in/login" target="_blank" class="nav-item">
             <i class="fa-solid fa-users"></i>
             <span>Customer Portal</span>
           </a>
-
-          <a href="https://vendor.raigroups.in/login" target="_blank" class="account-item">
+          <a href="https://vendor.raigroups.in/login" target="_blank" class="nav-item">
             <i class="fa-solid fa-truck-field"></i>
             <span>Vendor Portal</span>
           </a>
+        </div>
 
-          <a href="https://mail.raigroups.in" target="_blank" class="account-item">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Zoho Corporate Mail</span>
+        <!-- Helpdesk Modules -->
+        <div class="nav-group">
+          <div class="nav-group-title">Support & Docs</div>
+          <a href="https://support.raigroups.in/login" target="_blank" class="nav-item">
+            <i class="fa-solid fa-headset"></i>
+            <span>Support Tickets</span>
           </a>
-
+          <a href="https://docs.raigroups.in" target="_blank" class="nav-item">
+            <i class="fa-solid fa-book"><span>SOP Wiki Docs</span></i>
+          </a>
+        </div>
+        
+        <!-- Mail & settings -->
+        <div class="nav-group">
+          <div class="nav-group-title">System Admin</div>
+          <a href="https://mail.raigroups.in" target="_blank" class="nav-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Zoho Mail Admin</span>
+          </a>
         </div>
       </div>
       
-      <!-- Quick Status Column -->
-      <div class="accounts-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <h3>System Status</h3>
-          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">All corporate services and subdomain gateways are operational.</p>
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="width: 10px; height: 10px; background-color: var(--color-success); border-radius: 50%; display: inline-block;"></span>
-          <span style="font-size: 13px; font-weight: 700; color: var(--color-success);">99.9% Services Uptime</span>
+      <!-- Sidebar User Panel -->
+      <div class="sidebar-footer">
+        <div class="user-avatar">AD</div>
+        <div class="user-info">
+          <span class="user-name">Administrator</span>
+          <span class="user-role">Rai Groups Admin</span>
         </div>
       </div>
+    </aside>
+
+    <!-- RIGHT CONTENT AREA -->
+    <div class="app-content">
+      
+      <!-- Top Navbar Header -->
+      <header class="content-header">
+        <div class="header-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search leads, pipelines, audits...">
+        </div>
+        
+        <div class="header-utility">
+          <button class="btn-icon" title="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="badge-dot"></span>
+          </button>
+          <a href="index.html" class="btn btn-secondary">
+            <i class="fa-solid fa-arrow-left-long"></i> Back to Main Site
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Content Body -->
+      <main class="content-body">
+        
+        <div class="body-title">
+          <h2>Executive CRM & ERP Panel</h2>
+        </div>
+
+        <!-- Metrics Row -->
+        <div class="metrics-row">
+          
+          <div class="metric-card-premium">
+            <div class="card-header-flex">
+              <span>Active CRM Pipeline</span>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="metric-main">
+              <div class="metric-num" id="activePipelineNum">$452,800</div>
+              <div class="metric-sub up">
+                <i class="fa-solid fa-arrow-trend-up"></i> +12%
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-card-premium gold">
+            <div class="card-header-flex">
+              <span>Leads Received Today</span>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="metric-main">
+              <div class="metric-num" id="todayLeadsNum">28</div>
+              <div class="metric-sub up">
+                <i class="fa-solid fa-arrow-trend-up"></i> +8.4%
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-card-premium green">
+            <div class="card-header-flex">
+              <span>Total Operations Value</span>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="metric-main">
+              <div class="metric-num">$842K</div>
+              <div class="metric-sub up">
+                <i class="fa-solid fa-arrow-trend-up"></i> +14.2%
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-card-premium">
+            <div class="card-header-flex">
+              <span>Compliance SLA</span>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="metric-main">
+              <div class="metric-num">99.2%</div>
+              <div class="metric-sub up" style="background-color: var(--color-green-glow); color: var(--color-green);">
+                Optimal
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Columns Section -->
+        <div class="dashboard-columns">
+          
+          <!-- LEFT COLUMN: Charts & Data Grid -->
+          <div class="col-left">
+            
+            <!-- Pipeline Revenue Trend Chart -->
+            <div class="panel-card">
+              <div class="panel-card-title">
+                <h3>Pipeline Revenue Forecast</h3>
+                <span class="badge-premium badge-blue">CRM Active data</span>
+              </div>
+              <div class="chart-wrapper" style="height: 320px;">
+                <canvas id="pipelineChart"></canvas>
+              </div>
+            </div>
+
+            <!-- Active Lead Pipeline Table -->
+            <div class="panel-card">
+              <div class="panel-card-title">
+                <h3>Active Lead Pipeline</h3>
+                <span class="badge-premium badge-blue"><i class="fa-solid fa-list-check" style="margin-right: 6px;"></i> CRM records</span>
+              </div>
+              
+              <div class="table-container">
+                <table class="enterprise-table">
+                  <thead>
+                    <tr>
+                      <th>Client Details</th>
+                      <th>Pipeline Status</th>
+                      <th>Lead Source</th>
+                      <th>Est. Value</th>
+                      <th>Active Time</th>
+                    </tr>
+                  </thead>
+                  <tbody id="leadsTableBody">
+                    <tr>
+                      <td>
+                        <div class="client-cell">
+                          <div class="client-avatar avatar-a">RR</div>
+                          <div class="client-info">
+                            <span class="client-name">Rishabh Rai</span>
+                            <span class="client-email">rishabh@raigroups.in</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td><span class="badge-premium badge-gold">Contacted</span></td>
+                      <td>Website Form</td>
+                      <td style="font-weight: 700;">$45,000</td>
+                      <td class="text-secondary">2 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="client-cell">
+                          <div class="client-avatar avatar-b">SK</div>
+                          <div class="client-info">
+                            <span class="client-name">Sanjay Kumar</span>
+                            <span class="client-email">sanjay@example.com</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td><span class="badge-premium badge-blue">In Progress</span></td>
+                      <td>Partner Referral</td>
+                      <td style="font-weight: 700;">$125,000</td>
+                      <td class="text-secondary">5 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="client-cell">
+                          <div class="client-avatar avatar-c">AM</div>
+                          <div class="client-info">
+                            <span class="client-name">Amit Mishra</span>
+                            <span class="client-email">amit.m@mishratrading.com</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td><span class="badge-premium badge-green">Won</span></td>
+                      <td>Direct Traffic</td>
+                      <td style="font-weight: 700;">$82,000</td>
+                      <td class="text-secondary">1 day ago</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="client-cell">
+                          <div class="client-avatar avatar-d">VS</div>
+                          <div class="client-info">
+                            <span class="client-name">Vikas Sharma</span>
+                            <span class="client-email">vikas@sharmalogistics.com</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td><span class="badge-premium badge-red">Lost</span></td>
+                      <td>Organic Search</td>
+                      <td style="font-weight: 700;">$32,000</td>
+                      <td class="text-secondary">2 days ago</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: Forms, Donut Chart & Activity -->
+          <div class="col-right">
+            
+            <!-- Quick Lead Creator Form -->
+            <div class="panel-card">
+              <div class="panel-card-title">
+                <h3>Quick Lead Generator</h3>
+              </div>
+              
+              <form id="quickLeadForm">
+                <div class="form-group">
+                  <label for="leadName">Client Full Name</label>
+                  <input type="text" id="leadName" class="form-control-dark" placeholder="e.g. Rahul Singh" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="leadEmail">Email Address</label>
+                  <input type="email" id="leadEmail" class="form-control-dark" placeholder="e.g. rahul@company.com" required>
+                </div>
+
+                <div class="form-group-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label for="leadValue">Est. Value ($)</label>
+                    <input type="text" id="leadValue" class="form-control-dark" placeholder="e.g. 25000" required>
+                  </div>
+                  
+                  <div class="form-group" style="margin-bottom: 0;">
+                    <label for="leadSource">Lead Source</label>
+                    <select id="leadSource" class="form-control-dark select-dark">
+                      <option>Website Form</option>
+                      <option>Partner Referral</option>
+                      <option>Direct Traffic</option>
+                      <option>Organic Search</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="leadStatus">Initial Status</label>
+                  <select id="leadStatus" class="form-control-dark select-dark">
+                    <option>In Progress</option>
+                    <option>Contacted</option>
+                    <option>Won</option>
+                    <option>Lost</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-size: 14px; margin-top: 10px;">
+                  <i class="fa-solid fa-plus-circle"></i> Create Lead
+                </button>
+              </form>
+            </div>
+
+            <!-- Lead Distribution Donut -->
+            <div class="panel-card">
+              <div class="panel-card-title">
+                <h3>Lead Source Distribution</h3>
+              </div>
+              <div class="chart-wrapper" style="height: 220px;">
+                <canvas id="sourceChart"></canvas>
+              </div>
+            </div>
+
+            <!-- Real-Time Activity Log Feed -->
+            <div class="panel-card">
+              <div class="panel-card-title">
+                <h3>Operations Activity Log</h3>
+              </div>
+              
+              <div class="activity-list">
+                
+                <div class="activity-item">
+                  <div class="activity-dot-wrapper">
+                    <div class="activity-dot"></div>
+                    <div class="activity-line"></div>
+                  </div>
+                  <div class="activity-content">
+                    <span class="activity-text">Lead <span>Rishabh Rai</span> was successfully created</span>
+                    <span class="activity-time">Just now</span>
+                  </div>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-dot-wrapper">
+                    <div class="activity-dot gold"></div>
+                    <div class="activity-line"></div>
+                  </div>
+                  <div class="activity-content">
+                    <span class="activity-text">Nginx CORS configured for <span>customer.raigroups.in</span></span>
+                    <span class="activity-time">2 hours ago</span>
+                  </div>
+                </div>
+
+                <div class="activity-item">
+                  <div class="activity-dot-wrapper">
+                    <div class="activity-dot green"></div>
+                    <div class="activity-line"></div>
+                  </div>
+                  <div class="activity-content">
+                    <span class="activity-text">Branding favicon assets synced on <span>Oracle Cloud VM</span></span>
+                    <span class="activity-time">5 hours ago</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </main>
     </div>
 
-  </main>
+  </div>
 
   <!-- Custom script -->
   <script src="dashboard_draft.js"></script>
