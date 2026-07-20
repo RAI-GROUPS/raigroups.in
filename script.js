@@ -119,26 +119,54 @@ document.addEventListener('DOMContentLoaded', () => {
       const subject = document.getElementById('formSubject').value;
       const message = document.getElementById('formMessage').value;
 
-      // Simulate API submit delay
+      // Get button and state
       const submitBtn = contactForm.querySelector('.submit-btn');
       const originalBtnText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Directing to Mail...';
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
 
-      setTimeout(() => {
-        // Success callback animation
+      // Submit via Fetch API to ERPNext CRM
+      fetch('https://erp.raigroups.in/api/method/frappe.www.contact.send_message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          sender: email,
+          sender_name: name,
+          subject: subject,
+          message: message
+        })
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Hide form and show success screen
         contactForm.classList.add('hidden');
         formSuccess.classList.remove('hidden');
+      })
+      .catch(error => {
+        console.error('API submission failed, falling back to mailto:', error);
         
-        // Construct mailto link and trigger
+        // Fallback to mailto link if API fails
         const mailBody = `Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`;
         const mailtoLink = `mailto:support@raigroups.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
         window.location.href = mailtoLink;
-
+        
+        // Still show success screen to keep UX clean
+        contactForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+      })
+      .finally(() => {
         // Reset button state
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
-      }, 1000);
+      });
     });
   }
 
