@@ -1,4 +1,4 @@
-/* RISHABH & BROTHERS SERVICES - Enterprise CRM/ERP Dashboard JS (Live ERPNext Sync) */
+/* RISHABH & BROTHERS SERVICES - Enterprise CRM/ERP Dashboard JS (Live Real-Time Sync) */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let pipelineChart, sourceChart;
 
-  // Chart Styling Config
   const chartOptions = {
     textColor: '#94a3b8',
     gridColor: 'rgba(255, 255, 255, 0.05)',
@@ -35,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
         datasets: [
           {
-            label: 'Active Leads Value',
-            data: [120, 150, 180, 220, 280, 340, 390, 850, 1434],
+            label: 'Sales Revenue Value',
+            data: [120, 150, 180, 1319.5, 1353.3, 1353.3, 1353.3, 1353.3, 1353.3],
             borderColor: '#3b82f6',
             backgroundColor: blueGradient,
             fill: true,
@@ -46,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             pointHoverRadius: 7
           },
           {
-            label: 'Weighted Forecast',
-            data: [90, 110, 130, 170, 210, 260, 290, 650, 1120],
+            label: 'Active Leads Pipeline',
+            data: [90, 110, 130, 950, 1200, 1434.5, 1434.5, 1434.5, 1434.5],
             borderColor: '#cca43b',
             backgroundColor: goldGradient,
             fill: true,
@@ -106,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
       data: {
         labels: ['Direct Tender', 'Existing Client', 'Reference', 'Website Form'],
         datasets: [{
-          data: [50, 30, 15, 5],
+          data: [65, 20, 10, 5],
           backgroundColor: ['#10b981', '#cca43b', '#3b82f6', '#8b5cf6'],
           borderWidth: 2,
           borderColor: '#111224'
@@ -131,23 +130,51 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // Live ERPNext REST API Integration & Dynamic Fetch
+  // Live ERPNext REST API Integration & Real-Time Sync
   // =========================================================================
   const leadForm = document.getElementById('quickLeadForm');
   const leadsTableBody = document.getElementById('leadsTableBody');
   
+  const totalSalesNum = document.getElementById('totalSalesNum');
+  const totalPurchaseNum = document.getElementById('totalPurchaseNum');
   const activePipelineNum = document.getElementById('activePipelineNum');
   const todayLeadsNum = document.getElementById('todayLeadsNum');
 
   async function syncLiveERPNextData() {
     try {
-      const response = await fetch(`${ERP_BASE_URL}/api/resource/Lead?fields=["name","lead_name","company_name","email_id","mobile_no","status","source"]&limit_page_length=10`, {
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        const data = await response.json();
-        if (data && data.data && data.data.length > 0) {
-          renderLeadsTable(data.data);
+      // 1. Fetch Sales Invoices Total
+      const salesRes = await fetch(`${ERP_BASE_URL}/api/resource/Sales%20Invoice?fields=["grand_total","docstatus"]&filters=[["docstatus","=",1]]&limit_page_length=50`);
+      if (salesRes.ok) {
+        const salesData = await salesRes.json();
+        if (salesData && salesData.data) {
+          let sumSales = 0;
+          salesData.data.forEach(inv => sumSales += (inv.grand_total || 0));
+          if (totalSalesNum && sumSales > 0) {
+            const lakhs = (sumSales / 100000).toFixed(2);
+            totalSalesNum.textContent = `₹${lakhs} Lakh`;
+          }
+        }
+      }
+
+      // 2. Fetch Purchase Invoices Total
+      const purRes = await fetch(`${ERP_BASE_URL}/api/resource/Purchase%20Invoice?fields=["grand_total","docstatus"]&limit_page_length=50`);
+      if (purRes.ok) {
+        const purData = await purRes.json();
+        if (purData && purData.data) {
+          let sumPur = 0;
+          purData.data.forEach(pi => sumPur += (pi.grand_total || 0));
+          if (totalPurchaseNum && sumPur > 0) {
+            totalPurchaseNum.textContent = '₹' + Math.round(sumPur).toLocaleString('en-IN');
+          }
+        }
+      }
+
+      // 3. Fetch Leads
+      const leadsRes = await fetch(`${ERP_BASE_URL}/api/resource/Lead?fields=["name","lead_name","company_name","email_id","mobile_no","status","source"]&limit_page_length=20`);
+      if (leadsRes.ok) {
+        const leadsData = await leadsRes.json();
+        if (leadsData && leadsData.data && leadsData.data.length > 0) {
+          renderLeadsTable(leadsData.data);
         }
       }
     } catch (e) {
@@ -230,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       try {
-        const res = await fetch(`${ERP_BASE_URL}/api/resource/Lead`, {
+        await fetch(`${ERP_BASE_URL}/api/resource/Lead`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -239,7 +266,6 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(payload)
         });
 
-        // Add lead to local UI top row
         const avatars = ['avatar-a', 'avatar-b', 'avatar-c', 'avatar-d'];
         const randomAvatarClass = avatars[Math.floor(Math.random() * avatars.length)];
         const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
@@ -289,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
           todayLeadsNum.textContent = currentLeadsCount + 1;
         }
 
-        showToast(`Lead for "${name}" successfully linked to ERPNext!`);
+        showToast(`Lead for "${name}" successfully submitted to ERPNext!`);
         leadForm.reset();
 
       } catch (err) {
