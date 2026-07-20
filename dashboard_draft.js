@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
         datasets: [
           {
-            label: 'CRM Active Pipeline',
+            label: 'Active Leads Value',
             data: [120, 150, 180, 220, 280, 340, 390, 420, 452],
             borderColor: '#3b82f6',
             backgroundColor: blueGradient,
