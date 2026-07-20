@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             label: 'Weighted Forecast',
             data: [90, 110, 130, 170, 210, 260, 290, 310, 340],
-            borderColor: '#f59e0b',
+            borderColor: '#cca43b',
             backgroundColor: goldGradient,
             fill: true,
             tension: 0.4,
             borderWidth: 2,
             borderDash: [5, 5],
-            pointBackgroundColor: '#f59e0b',
+            pointBackgroundColor: '#cca43b',
             pointHoverRadius: 5
           }
         ]
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         labels: ['Organic Search', 'Website Form', 'Direct Traffic', 'Partner Referral'],
         datasets: [{
           data: [40, 25, 20, 15],
-          backgroundColor: ['#3b82f6', '#f59e0b', '#10b981', '#8b5cf6'],
+          backgroundColor: ['#3b82f6', '#cca43b', '#10b981', '#8b5cf6'],
           borderWidth: 2,
           borderColor: '#111224'
         }]

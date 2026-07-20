@@ -1,30 +1,32 @@
 /* RISHABH & BROTHERS SERVICES - Enterprise CRM/ERP Dark Dashboard CSS */
 
 :root {
-  --bg-dark-canvas: #090a15;
-  --bg-dark-card: #111224;
-  --bg-dark-sidebar: #0c0d1b;
-  --bg-dark-hover: #1b1c34;
+  /* Refined Palette: Deep Blue-Charcoal Theme */
+  --bg-dark-canvas: #0e111a;       /* Deep blue-charcoal canvas */
+  --bg-dark-sidebar: #08090f;      /* Slightly darker sidebar */
+  --bg-dark-card: #161a26;         /* One step lighter card background */
+  --bg-dark-hover: #22283a;        /* Card hover highlight */
   
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
   
-  --color-blue: #3b82f6;
-  --color-blue-glow: rgba(59, 130, 246, 0.15);
-  --color-gold: #f59e0b;
-  --color-gold-glow: rgba(245, 158, 11, 0.15);
+  --color-blue: #3b82f6;           /* Cobalt blue accent */
+  --color-blue-glow: rgba(59, 130, 246, 0.12);
+  --color-gold: #cca43b;           /* Muted metallic gold accent */
+  --color-gold-glow: rgba(204, 164, 59, 0.12);
   --color-green: #10b981;
-  --color-green-glow: rgba(16, 185, 129, 0.15);
+  --color-green-glow: rgba(16, 185, 129, 0.12);
   --color-red: #ef4444;
   
-  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-subtle: rgba(255, 255, 255, 0.06);
   --border-focus: rgba(59, 130, 246, 0.4);
   
-  --shadow-sm: 0 4px 20px -2px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
-  --shadow-md: 0 15px 35px -5px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  /* High-end depth shadow configurations */
+  --shadow-sm: 0 4px 20px -2px rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 16px 36px -4px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
   --shadow-glow-blue: 0 0 25px rgba(59, 130, 246, 0.25);
-  --shadow-glow-gold: 0 0 25px rgba(245, 158, 11, 0.25);
+  --shadow-glow-gold: 0 0 25px rgba(204, 164, 59, 0.25);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-title: 'Outfit', sans-serif;
@@ -117,7 +119,7 @@ body {
 
 .sidebar-navigation {
   flex-grow: 1;
-  padding: 20px 0px; /* remove padding-left/right to allow active borders */
+  padding: 20px 0px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -376,7 +378,7 @@ body {
 .metric-card-premium:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .metric-card-premium::before {
@@ -577,7 +579,7 @@ textarea.form-control-dark {
 }
 
 .enterprise-table tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.01);
+  background-color: rgba(255, 255, 255, 0.015);
 }
 
 .enterprise-table tr:hover {
@@ -603,7 +605,7 @@ textarea.form-control-dark {
 }
 
 .avatar-a { background-color: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-.avatar-b { background-color: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+.avatar-b { background-color: rgba(204, 164, 59, 0.15); color: var(--color-gold); }
 .avatar-c { background-color: rgba(16, 185, 129, 0.15); color: #10b981; }
 .avatar-d { background-color: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
 
@@ -717,7 +719,7 @@ textarea.form-control-dark {
   }
   
   .content-body {
-    padding: 16px;
+    padding: 20px 16px;
   }
   
   .header-search {
@@ -727,5 +729,15 @@ textarea.form-control-dark {
   
   #sidebarCollapse {
     display: flex !important;
+  }
+  
+  .metrics-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .dashboard-columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
