@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive CRM Application | RISHABH & BROTHERS SERVICES</title>
+  
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="crm.css?v=1.0">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- LEFT SIDEBAR -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-brand">
+        <img src="logo.png" alt="RISHABH & BROTHERS Logo">
+        <h1>RISHABH & BROTHERS<span>Executive CRM Hub</span></h1>
+      </div>
+      
+      <div class="sidebar-navigation">
+        <!-- CRM Modules -->
+        <div class="nav-group">
+          <div class="nav-group-title">CRM & Sales</div>
+          <a href="dashboard_draft.html" class="nav-item">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Executive Panel</span>
+          </a>
+          <a href="crm.html" class="nav-item active">
+            <i class="fa-solid fa-address-book"></i>
+            <span>CRM Directory</span>
+          </a>
+          <a href="https://erp.raigroups.in/app/quotation" target="_blank" class="nav-item">
+            <i class="fa-solid fa-file-invoice"></i>
+            <span>Quotes & Estimates</span>
+          </a>
+          <a href="https://erp.raigroups.in/app/sales-invoice" target="_blank" class="nav-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Sales Invoices</span>
+          </a>
+        </div>
+        
+        <!-- ERP Modules -->
+        <div class="nav-group">
+          <div class="nav-group-title">ERP & Operations</div>
+          <a href="https://erp.raigroups.in/app" target="_blank" class="nav-item">
+            <i class="fa-solid fa-gears"></i>
+            <span>ERP Desk Backend</span>
+          </a>
+          <a href="index.html" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Main Website</span>
+          </a>
+        </div>
+        
+        <!-- Mail Admin -->
+        <div class="nav-group">
+          <div class="nav-group-title">System Admin</div>
+          <a href="https://mail.raigroups.in" target="_blank" class="nav-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Zoho Mail Admin</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Sidebar User Panel -->
+      <div class="sidebar-footer">
+        <div class="user-avatar">SM</div>
+        <div class="user-info">
+          <span class="user-name">Sales Manager</span>
+          <span class="user-role">sales@raigroups.in</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT AREA -->
+    <div class="app-content">
+      
+      <!-- Top Navbar Header -->
+      <header class="content-header">
+        <div class="header-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="crmGlobalSearch" placeholder="Search leads, companies, quotes...">
+        </div>
+        
+        <div class="header-actions">
+          <button class="btn-premium btn-outline" id="openQuoteModalBtn">
+            <i class="fa-solid fa-calculator"></i> Create Quote
+          </button>
+          <button class="btn-premium btn-gold" id="openLeadModalBtn">
+            <i class="fa-solid fa-plus"></i> New Lead
+          </button>
+        </div>
+      </header>
+
+      <!-- Page Body -->
+      <div class="page-body">
+        
+        <div class="page-title-section">
+          <div>
+            <h2>Commercial CRM & Deal Pipeline</h2>
+            <p>Manage customer leads, quotations, and active deal pipelines synchronized with ERPNext.</p>
+          </div>
+        </div>
+
+        <!-- CRM Tab Navigation -->
+        <div class="crm-tabs">
+          <button class="crm-tab-btn active" data-tab="kanbanTab">
+            <i class="fa-solid fa-table-columns"></i> Kanban Deal Board
+          </button>
+          <button class="crm-tab-btn" data-tab="directoryTab">
+            <i class="fa-solid fa-list-check"></i> Lead Directory
+          </button>
+          <button class="crm-tab-btn" data-tab="quotationsTab">
+            <i class="fa-solid fa-file-signature"></i> Quotation Register
+          </button>
+        </div>
+
+        <!-- TAB 1: KANBAN BOARD -->
+        <div class="tab-view active" id="kanbanTab">
+          <div class="kanban-board">
+            
+            <!-- Column 1: New Enquiry -->
+            <div class="kanban-column" id="colOpen">
+              <div class="column-header">
+                <div class="column-title">
+                  <i class="fa-solid fa-envelope-open-text" style="color: #3b82f6;"></i>
+                  <span>New Enquiries</span>
+                </div>
+                <span class="column-count" id="countOpen">1</span>
+              </div>
+              <div class="kanban-cards" id="cardsOpen">
+                <!-- Card -->
+                <div class="deal-card">
+                  <div class="deal-title">GS EXPRESS PVT LTD</div>
+                  <div class="deal-company"><i class="fa-solid fa-building"></i> Varanasi, UP</div>
+                  <div class="deal-footer">
+                    <span class="badge-premium badge-blue">Open</span>
+                    <span class="deal-value">₹16,992</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Qualified & Contacted -->
+            <div class="kanban-column" id="colContacted">
+              <div class="column-header">
+                <div class="column-title">
+                  <i class="fa-solid fa-comments" style="color: #cca43b;"></i>
+                  <span>Qualified / Contacted</span>
+                </div>
+                <span class="column-count" id="countContacted">1</span>
+              </div>
+              <div class="kanban-cards" id="cardsContacted">
+                <!-- Card -->
+                <div class="deal-card">
+                  <div class="deal-title">320 kVA DG Set Maintenance</div>
+                  <div class="deal-company"><i class="fa-solid fa-building"></i> EPACK PREFAB</div>
+                  <div class="deal-footer">
+                    <span class="badge-premium badge-gold">Contacted</span>
+                    <span class="deal-value">₹98,000</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 3: Quotation Sent -->
+            <div class="kanban-column" id="colQuotation">
+              <div class="column-header">
+                <div class="column-title">
+                  <i class="fa-solid fa-paper-plane" style="color: #a855f7;"></i>
+                  <span>Quotation Sent</span>
+                </div>
+                <span class="column-count" id="countQuotation">1</span>
+              </div>
+              <div class="kanban-cards" id="cardsQuotation">
+                <!-- Card -->
+                <div class="deal-card">
+                  <div class="deal-title">CCTV & Cable Repair Order</div>
+                  <div class="deal-company"><i class="fa-solid fa-building"></i> EPACK PREFAB</div>
+                  <div class="deal-footer">
+                    <span class="badge-premium badge-gold">QT-26-003</span>
+                    <span class="deal-value">₹18,408</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 4: Converted / Won -->
+            <div class="kanban-column" id="colWon">
+              <div class="column-header">
+                <div class="column-title">
+                  <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+                  <span>Converted / Won</span>
+                </div>
+                <span class="column-count" id="countWon">1</span>
+              </div>
+              <div class="kanban-cards" id="cardsWon">
+                <!-- Card -->
+                <div class="deal-card">
+                  <div class="deal-title">Paddy Straw (Parali) Supply</div>
+                  <div class="deal-company"><i class="fa-solid fa-building"></i> M/S D ENTERPRISES</div>
+                  <div class="deal-footer">
+                    <span class="badge-premium badge-green">Won / Paid</span>
+                    <span class="deal-value">₹13,19,500</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB 2: LEAD DIRECTORY -->
+        <div class="tab-view" id="directoryTab">
+          <div class="panel-card">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <h3>Client & Lead Directory</h3>
+              <span class="badge-premium badge-gold"><i class="fa-solid fa-cloud"></i> Synced with ERPNext</span>
+            </div>
+            
+            <table class="enterprise-table">
+              <thead>
+                <tr>
+                  <th>Client / Company Name</th>
+                  <th>Status</th>
+                  <th>Lead Source</th>
+                  <th>City / Location</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="crmLeadDirectoryBody">
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <div class="client-avatar avatar-a">MD</div>
+                      <div class="client-info">
+                        <span class="client-name">M/S D ENTERPRISES</span>
+                        <span class="client-email">denterprises@gmail.com</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge-premium badge-green">Converted</span></td>
+                  <td>Direct Tender</td>
+                  <td>Ghazipur, UP</td>
+                  <td><button class="btn-premium btn-outline" style="padding: 4px 10px; font-size: 11px;">View ERP</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <div class="client-avatar avatar-b">EP</div>
+                      <div class="client-info">
+                        <span class="client-name">EPACK PREFAB TECHNOLOGIES LIMITED</span>
+                        <span class="client-email">contact@epackprefab.com</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge-premium badge-gold">Quotation</span></td>
+                  <td>Existing Client</td>
+                  <td>Gautambuddha Nagar, UP</td>
+                  <td><button class="btn-premium btn-outline" style="padding: 4px 10px; font-size: 11px;">View ERP</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="client-cell">
+                      <div class="client-avatar avatar-c">GS</div>
+                      <div class="client-info">
+                        <span class="client-name">GS EXPRESS PVT LTD</span>
+                        <span class="client-email">gsexpress@gmail.com</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge-premium badge-blue">Open</span></td>
+                  <td>Reference</td>
+                  <td>Varanasi, UP</td>
+                  <td><button class="btn-premium btn-outline" style="padding: 4px 10px; font-size: 11px;">View ERP</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: QUOTATIONS REGISTER -->
+        <div class="tab-view" id="quotationsTab">
+          <div class="panel-card">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <h3>Official Quotation Register</h3>
+              <button class="btn-premium btn-gold" id="newQuoteRegBtn"><i class="fa-solid fa-plus"></i> Draft Quotation</button>
+            </div>
+            
+            <table class="enterprise-table">
+              <thead>
+                <tr>
+                  <th>Quotation No.</th>
+                  <th>Date</th>
+                  <th>Customer Name</th>
+                  <th>Status</th>
+                  <th>Grand Total</th>
+                </tr>
+              </thead>
+              <tbody id="crmQuoteRegisterBody">
+                <tr>
+                  <td style="font-weight: 700; color: var(--color-gold);">QT-26-001</td>
+                  <td>04/06/2026</td>
+                  <td>EPACK PREFAB TECHNOLOGIES LIMITED</td>
+                  <td><span class="badge-premium badge-green">Invoiced</span></td>
+                  <td style="font-weight: 700;">₹33,826.01</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: var(--color-gold);">QT-26-002</td>
+                  <td>08/06/2026</td>
+                  <td>EPACK PREFAB TECHNOLOGIES LIMITED</td>
+                  <td><span class="badge-premium badge-gold">Sent</span></td>
+                  <td style="font-weight: 700;">₹98,000.00</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 700; color: var(--color-gold);">QT-26-003</td>
+                  <td>15/07/2026</td>
+                  <td>EPACK PREFAB TECHNOLOGIES LIMITED</td>
+                  <td><span class="badge-premium badge-gold">Sent</span></td>
+                  <td style="font-weight: 700;">₹18,880.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 1: NEW LEAD -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Create New CRM Lead</h3>
+        <button class="modal-close" id="closeLeadModal">&times;</button>
+      </div>
+      <form id="modalLeadForm">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Client / Company Name *</label>
+            <input type="text" id="modalLeadCompany" required placeholder="e.g. Kashi Electricals Pvt Ltd">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="modalLeadEmail" placeholder="contact@company.com">
+          </div>
+          <div class="form-group">
+            <label>Mobile / Phone</label>
+            <input type="text" id="modalLeadPhone" placeholder="9876543210">
+          </div>
+          <div class="form-group">
+            <label>Lead Source</label>
+            <select id="modalLeadSource">
+              <option value="Direct Tender">Direct Tender</option>
+              <option value="Existing Client">Existing Client</option>
+              <option value="Reference">Reference</option>
+              <option value="Website Form">Website Form</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Initial Status</label>
+            <select id="modalLeadStatus">
+              <option value="Open">Open</option>
+              <option value="Contacted">Contacted</option>
+              <option value="Quotation">Quotation</option>
+              <option value="Converted">Converted</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-premium btn-outline" id="cancelLeadModal">Cancel</button>
+          <button type="submit" class="btn-premium btn-gold">Save & Sync to ERPNext</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 2: CREATE QUOTATION -->
+  <div class="modal-overlay" id="quoteModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Draft Commercial Quotation</h3>
+        <button class="modal-close" id="closeQuoteModal">&times;</button>
+      </div>
+      <form id="modalQuoteForm">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label>Customer Name *</label>
+            <input type="text" id="modalQuoteCustomer" required placeholder="Select or type Customer Name">
+          </div>
+          <div class="form-group">
+            <label>Item / Service Description *</label>
+            <input type="text" id="modalQuoteItem" required placeholder="e.g. Paddy Straw (Parali) / DG Servicing">
+          </div>
+          <div class="form-group">
+            <label>Quantity *</label>
+            <input type="number" id="modalQuoteQty" required value="1">
+          </div>
+          <div class="form-group">
+            <label>Unit Rate (₹) *</label>
+            <input type="number" id="modalQuoteRate" step="0.01" required placeholder="0.00">
+          </div>
+          <div class="form-group">
+            <label>GST Rate (%)</label>
+            <select id="modalQuoteGST">
+              <option value="0">0% (Exempted)</option>
+              <option value="5">5% GST</option>
+              <option value="18" selected>18% GST</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-premium btn-outline" id="cancelQuoteModal">Cancel</button>
+          <button type="submit" class="btn-premium btn-gold">Generate & Sync Quote</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom Script -->
+  <script src="crm.js?v=1.0"></script>
+</body>
+</html>
