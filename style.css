@@ -898,7 +898,9 @@ ul {
   font-size: 14px;
 }
 
-.main-footer .logo {
+.main-footer .logo,
+.main-footer a.logo,
+.footer-brand .logo {
   color: #f8fafc !important;
 }
 
