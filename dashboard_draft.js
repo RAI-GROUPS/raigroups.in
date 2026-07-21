@@ -142,41 +142,108 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function syncLiveERPNextData() {
     try {
-      // 1. Fetch Sales Invoices Total
-      const salesRes = await fetch(`${ERP_BASE_URL}/api/resource/Sales%20Invoice?fields=["grand_total","docstatus"]&filters=[["docstatus","=",1]]&limit_page_length=50`);
+      // 1. Fetch Sales Invoices
+      const salesRes = await fetch(`${ERP_BASE_URL}/api/resource/Sales%20Invoice?fields=["grand_total","docstatus","posting_date"]&filters=[["docstatus","=",1]]&limit_page_length=100`);
+      let sumSales = 0;
+      const monthlySales = Array(12).fill(0);
+      
       if (salesRes.ok) {
         const salesData = await salesRes.json();
         if (salesData && salesData.data) {
-          let sumSales = 0;
-          salesData.data.forEach(inv => sumSales += (inv.grand_total || 0));
-          if (totalSalesNum && sumSales > 0) {
-            const lakhs = (sumSales / 100000).toFixed(2);
-            totalSalesNum.textContent = `₹${lakhs} Lakh`;
-          }
+          salesData.data.forEach(inv => {
+            sumSales += (inv.grand_total || 0);
+            if (inv.posting_date) {
+              const date = new Date(inv.posting_date);
+              const m = date.getMonth();
+              monthlySales[m] += (inv.grand_total || 0) / 1000; // in thousands (k)
+            }
+          });
+        }
+      }
+      
+      if (totalSalesNum) {
+        if (sumSales > 0) {
+          const lakhs = (sumSales / 100000).toFixed(2);
+          totalSalesNum.textContent = `₹${lakhs} Lakh`;
+        } else {
+          totalSalesNum.textContent = `₹0.00 Lakh`;
         }
       }
 
-      // 2. Fetch Purchase Invoices Total
-      const purRes = await fetch(`${ERP_BASE_URL}/api/resource/Purchase%20Invoice?fields=["grand_total","docstatus"]&limit_page_length=50`);
+      // 2. Fetch Purchase Invoices
+      const purRes = await fetch(`${ERP_BASE_URL}/api/resource/Purchase%20Invoice?fields=["grand_total","docstatus"]&filters=[["docstatus","=",1]]&limit_page_length=100`);
+      let sumPur = 0;
       if (purRes.ok) {
         const purData = await purRes.json();
         if (purData && purData.data) {
-          let sumPur = 0;
           purData.data.forEach(pi => sumPur += (pi.grand_total || 0));
-          if (totalPurchaseNum && sumPur > 0) {
-            totalPurchaseNum.textContent = '₹' + Math.round(sumPur).toLocaleString('en-IN');
+        }
+      }
+      if (totalPurchaseNum) {
+        totalPurchaseNum.textContent = '₹' + Math.round(sumPur).toLocaleString('en-IN');
+      }
+
+      // 3. Fetch Quotations (Active Pipeline)
+      const quoteRes = await fetch(`${ERP_BASE_URL}/api/resource/Quotation?fields=["grand_total","docstatus","transaction_date"]&filters=[["docstatus","=",1]]&limit_page_length=100`);
+      let sumQuotes = 0;
+      const monthlyPipeline = Array(12).fill(0);
+      
+      if (quoteRes.ok) {
+        const quoteData = await quoteRes.json();
+        if (quoteData && quoteData.data) {
+          quoteData.data.forEach(q => {
+            sumQuotes += (q.grand_total || 0);
+            if (q.transaction_date) {
+              const date = new Date(q.transaction_date);
+              const m = date.getMonth();
+              monthlyPipeline[m] += (q.grand_total || 0) / 1000; // in thousands (k)
+            }
+          });
+        }
+      }
+      
+      if (activePipelineNum) {
+        activePipelineNum.textContent = '₹' + Math.round(sumQuotes).toLocaleString('en-IN');
+      }
+
+      // 4. Fetch Leads
+      const leadsRes = await fetch(`${ERP_BASE_URL}/api/resource/Lead?fields=["name","lead_name","company_name","email_id","mobile_no","status","source"]&limit_page_length=100`);
+      if (leadsRes.ok) {
+        const leadsData = await leadsRes.json();
+        if (leadsData && leadsData.data) {
+          renderLeadsTable(leadsData.data);
+          
+          // Group leads by source for Doughnut Chart
+          let countDirect = 0, countClient = 0, countReference = 0, countWebsite = 0;
+          leadsData.data.forEach(lead => {
+            const src = (lead.source || '').toLowerCase();
+            if (src.includes('direct') || src.includes('tender')) {
+              countDirect++;
+            } else if (src.includes('client') || src.includes('existing')) {
+              countClient++;
+            } else if (src.includes('ref')) {
+              countReference++;
+            } else {
+              countWebsite++;
+            }
+          });
+          
+          // Update Doughnut Chart
+          if (sourceChart) {
+            sourceChart.data.datasets[0].data = [countDirect, countClient, countReference, countWebsite];
+            sourceChart.update();
           }
         }
       }
 
-      // 3. Fetch Leads
-      const leadsRes = await fetch(`${ERP_BASE_URL}/api/resource/Lead?fields=["name","lead_name","company_name","email_id","mobile_no","status","source"]&limit_page_length=20`);
-      if (leadsRes.ok) {
-        const leadsData = await leadsRes.json();
-        if (leadsData && leadsData.data && leadsData.data.length > 0) {
-          renderLeadsTable(leadsData.data);
-        }
+      // Update Line Chart data and labels dynamically
+      if (pipelineChart) {
+        pipelineChart.data.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        pipelineChart.data.datasets[0].data = monthlySales;
+        pipelineChart.data.datasets[1].data = monthlyPipeline;
+        pipelineChart.update();
       }
+
     } catch (e) {
       console.log('ERPNext Live Sync Notice:', e);
     }
