@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pointHoverRadius: 7
           },
           {
-            label: 'Active Leads Pipeline',
+            label: 'Active Leads',
             data: [90, 110, 130, 950, 1200, 1434.5, 1434.5, 1434.5, 1434.5],
             borderColor: '#cca43b',
             backgroundColor: goldGradient,
