@@ -1,0 +1,48 @@
+Item ID,Item Name,HSN/SAC,Is Tax Calculated on Label Price,Description,Rate,Account,Account Code,Taxable,Exemption Reason,Taxability Type,Product Type,Intra State Tax Name,Intra State Tax Rate,Intra State Tax Type,Inter State Tax Name,Inter State Tax Rate,Inter State Tax Type,Source,Reference ID,Last Sync Time,Status,Usage unit,Unit Name,Purchase Rate,Purchase Account,Purchase Account Code,Purchase Description,Vendor,Item Type,Sellable,Purchasable,Track Inventory
+2761566000000032544,Wiring & PVC casing/conduit fixing,995461,FALSE,,INR 32.00,Sales,,true,,,service,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Inactive,sqf,,INR 0.00,,,,,Sales,true,false,false
+2761566000000079003,SHEARING MACHINE,,FALSE,,INR 0.00,,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Inactive,pcs,Pieces,INR 258000.00,Cost of Goods Sold,,"SHEARING MACHINE
+ (4-EDGED BLADE OF HC - HCr STEEL MATERIAL)
+MODEL NO. :- HSUG-3
+ CAPACITY :- 1270 X 2 MM (M.S) 
+STANDARD ACCESSORIES :     
+MOTOR PULLY,  MOTOR PLET, GEAR & WHEEL GUARD, OIL GREASE CUPS, WITH GUN METAL BUSHING, WITH MANUALLY LUBRICATION PUMP .
+ •  ELECTRICAL  :-  3 HP CROMPTON BRAND 3 PHASE (IE2) POWER SAVER MOTOR - 1440 RPM, 1 NOS STARTER , 2 NOS (ISI CERTIFIED) V-BELT.",,Purchases,false,true,false
+2761566000000079014,FULLY STEEL BODY C TYPE 10 TON CAPACITY SINGLE,,FALSE,,INR 0.00,,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Inactive,pcs,Pieces,INR 99000.00,Cost of Goods Sold,,"FULLY STEEL BODY C TYPE 10 TON CAPACITY SINGLE
+GEARED HEAVY DUTY, ADJUSTABLE STROKE POWER PRESS MACHINE. WITH KNOCKOUT SYSTEM, COMPLETE WITH ALL STANDARD ACCESSORIES.
+ CAPACITY IN TON :- 10 TON 
+ • STANDARD ACCESSORIES :   
+MOTOR PULLY, SCREW SPENER, MOTOR PLET, GEAR & WHEEL GUARD, OIL GREASE CUPS, WITH GUN METAL BUSHING.
+•  ELECTRICAL  :-  1 HP CROMPTON BRAND 3 PHASE (IE2) POWER SAVER MOTOR - 1440 RPM, 1 NOS RF SWITCH, 1 NOS  (ISI CERTIFIED) V-BELT.",,Purchases,false,true,false
+2761566000000079025,FULLY STEEL BODY C TYPE 20 TON CAPACITY DOUBLE,,FALSE,,INR 0.00,,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Inactive,pcs,Pieces,INR 175000.00,Cost of Goods Sold,,"FULLY STEEL BODY C TYPE 20 TON CAPACITY DOUBLE
+ GEARED HEAVY DUTY, ADJUSTABLE STROKE POWER PRESS MACHINE. WITH KNOCKOUT SYSTEM, COMPLETE WITH ALL STANDARD ACCESSORIES.
+CAPACITY IN TON :- 20 TON 
+ STANDARD ACCESSORIES :     
+MOTOR PULLY, SCREW SPENER, MOTOR PLET, GEAR & WHEEL GUARD, OIL GREASE CUPS, WITH GUN METAL BUSHING.
+•  ELECTRICAL  :-  2 HP CROMPTON BRAND 3 PHASE (IE2)  POWER SAVER MOTOR - 1440 RPM, 1 NOS RF SWITCH, 2 NOS (ISI CERTIFIED) V-BELT.",,Purchases,false,true,false
+2761566000000079038,MODULAR BOX DIES,,FALSE,,INR 0.00,,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Inactive,sets,,INR 350000.00,Cost of Goods Sold,,"MODULAR BOX DIE 
+2 Module Box
+3 Module Box 
+4 Module Box 
+6 Module Box 
+8 Module Box (Horizontal) 
+8 Module Box (Square)
+12 Module Box 
+16 Module Box 
+18 Module Box ",,Purchases,false,true,false
+2761566000000123113,"Paddy Straw(Parali), sugarcan",1213,FALSE,,INR 0.70,Sales,,false,GSTMARGINSCHEME,,goods,,,,,,,1,,,Inactive,kg,Kilograms,INR 0.50,Cost of Goods Sold,,,,Sales and Purchases,true,true,false
+2761566000000200003,GREAVES LUBE OIL- 20 LTR,27101980,FALSE,,INR 11248.31,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 10429.66,Materials,,,,Sales and Purchases,true,true,false
+2761566000000200008,LUB OIL 10 LTR,27101980,FALSE,,INR 5627.12,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 5222.00,Materials,,,,Sales and Purchases,true,true,false
+2761566000000200017,L.O.FLTR+ELEMENT V8/V6,84212300,FALSE,,INR 420.00,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 381.36,Materials,,,,Sales and Purchases,true,true,false
+2761566000000200029,Pre -Fuel filter,78060010,FALSE,,INR 225.00,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 221.19,Materials,,,,Sales and Purchases,true,true,false
+2761566000000200040,OUTER ELEMENTS,84213100,FALSE,,INR 4944.07,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 0.00,,,,,Sales,true,false,false
+2761566000000200045,INNER ELEMENT,84213100,FALSE,,INR 2500.00,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 0.00,,,,,Sales,true,false,false
+2761566000000200065,SERVICE CHARGE,998717,FALSE,,INR 5508.00,Sales,,true,,,service,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,Job,,INR 2200.00,Labor,,,,Sales and Purchases,true,true,false
+2761566000000206025,LUBE OIL 5 LTR,27101980,FALSE,,INR 4000.00,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 2650.85,Materials,,,,Sales and Purchases,true,true,false
+2761566000000206044,COOLANT 1 LTR,38200000,FALSE,,INR 800.00,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 700.00,Materials,,,,Sales and Purchases,true,true,false
+2761566000000216002,320 kVA DG Set Maintenance & Service,998719,FALSE,,INR 28249.00,Sales,,true,,,service,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 25000.00,Cost of Goods Sold,,,,Sales and Purchases,true,true,false
+2761566000000219119,coolant 10 ltr,38200000,FALSE,,INR 3200.00,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 2833.90,Cost of Goods Sold,,,,Sales and Purchases,true,true,false
+2761566000000219186,Micro -Fuel filter,78060010,FALSE,,INR 201.00,Sales,,true,,,goods,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 188.98,Cost of Goods Sold,,,,Sales and Purchases,true,true,false
+2761566000000219191,FREIGHT AND DELIVERY,998719,FALSE,,INR 3500.00,Sales,,true,,,service,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,nos,,INR 3000.00,Cost of Goods Sold,,,,Sales and Purchases,true,true,false
+2761566000000253001,CCTV Rack Cable Dressing & Tagging.,995461,FALSE,,INR 10000.00,Sales,,true,,,service,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,Job,,INR 7000.00,Labor,,,,Sales and Purchases,true,true,false
+2761566000000253009,CCTV Camera Repair/Maintenance Services,998719,FALSE,,INR 1500.00,Sales,,true,,,service,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,pcs,Pieces,INR 1200.00,Cost of Goods Sold,,,,Sales and Purchases,true,true,false
+2761566000000257001,DG set electrical panel repair and testing,998719,FALSE,,INR 4200.00,Sales,,true,,,service,GST18,18.000000,Group,IGST18,18.000000,Simple,1,,,Active,Job,,INR 3750.00,Cost of Goods Sold,,,,Sales and Purchases,true,true,false
