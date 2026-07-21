@@ -1,4 +1,5 @@
-// RISHABH & BROTHERS SERVICES Website Interactive Operations Script
+// RISHABH & BROTHERS SERVICES - script.js
+// Interactive features for B2B industrial website.
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -9,8 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
   const themeIcon = themeToggle.querySelector('i');
 
-  // Check saved theme or system preference
-  const savedTheme = localStorage.getItem('theme');
+  let savedTheme = null;
+  try {
+    savedTheme = localStorage.getItem('theme');
+  } catch (e) {
+    console.warn("Storage access restricted. Theme preference persistence disabled.", e);
+  }
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
@@ -31,18 +36,22 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.add('dark-theme');
     body.classList.remove('light-theme');
     themeIcon.className = 'fa-solid fa-sun';
-    localStorage.setItem('theme', 'dark');
+    try {
+      localStorage.setItem('theme', 'dark');
+    } catch (e) {}
   }
 
   function enableLightMode() {
     body.classList.add('light-theme');
     body.classList.remove('dark-theme');
     themeIcon.className = 'fa-solid fa-moon';
-    localStorage.setItem('theme', 'light');
+    try {
+      localStorage.setItem('theme', 'light');
+    } catch (e) {}
   }
 
   // =========================================================================
-  // Mobile Menu Toggle Logic
+  // Mobile Menu Toggle
   // =========================================================================
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const navMenu = document.getElementById('navMenu');
@@ -50,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   mobileMenuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-    
-    // Toggle menu icon
     if (navMenu.classList.contains('active')) {
       menuIcon.className = 'fa-solid fa-xmark';
     } else {
@@ -59,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close menu when a link is clicked
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -98,152 +104,168 @@ document.addEventListener('DOMContentLoaded', () => {
       header.style.padding = '0';
     } else {
       header.style.boxShadow = 'none';
-      header.style.padding = '5px 0';
     }
   });
 
   // =========================================================================
-  // Contact Form Submission Handler
-  // =========================================================================
-  const contactForm = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccess');
-  const resetFormBtn = document.getElementById('resetFormBtn');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Get values for submission handling
-      const name = document.getElementById('formName').value;
-      const email = document.getElementById('formEmail').value;
-      const subject = document.getElementById('formSubject').value;
-      const message = document.getElementById('formMessage').value;
-
-      // Get button and state
-      const submitBtn = contactForm.querySelector('.submit-btn');
-      const originalBtnText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending message...';
-
-      // Submit via Fetch API to ERPNext CRM
-      fetch('https://erp.raigroups.in/api/method/frappe.www.contact.send_message', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          sender: email,
-          sender_name: name,
-          subject: subject,
-          message: message
-        })
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Hide form and show success screen
-        contactForm.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-      })
-      .catch(error => {
-        console.error('API submission failed, falling back to mailto:', error);
-        
-        // Fallback to mailto link if API fails
-        const mailBody = `Name: ${name}\nSender Email: ${email}\n\nMessage:\n${message}`;
-        const mailtoLink = `mailto:support@raigroups.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
-        window.location.href = mailtoLink;
-        
-        // Still show success screen to keep UX clean
-        contactForm.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-      })
-      .finally(() => {
-        // Reset button state
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      });
-    });
-  }
-
-  if (resetFormBtn) {
-    resetFormBtn.addEventListener('click', () => {
-      formSuccess.classList.add('hidden');
-      contactForm.classList.remove('hidden');
-      contactForm.reset();
-    });
-  }
-
-  // =========================================================================
-  // Scroll Animation Reveal Effects
-  // =========================================================================
-  const revealItems = document.querySelectorAll('.service-card, .portal-card, .about-content, .security-infocard, .contact-info, .contact-form-wrapper');
-
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  });
-
-  // Apply reveal styles
-  revealItems.forEach(item => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-    revealObserver.observe(item);
-  });
-
-    // Inject dynamic CSS rules for animations (revealed state)
-  const styleSheet = document.createElement("style");
-  styleSheet.innerText = `
-    .service-card.revealed, .portal-card.revealed, .about-content.revealed, .security-infocard.revealed, .contact-info.revealed, .contact-form-wrapper.revealed {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-  `;
-  document.head.appendChild(styleSheet);
-
-  // =========================================================================
-  // Unified Portal Sidebar Drawer Toggle
+  // Portal Drawer Sidebar Toggle (Maintained)
   // =========================================================================
   const portalSidebarToggle = document.getElementById('portalSidebarToggle');
   const portalSidebar = document.getElementById('portalSidebar');
   const portalSidebarClose = document.getElementById('portalSidebarClose');
   const sidebarOverlay = document.getElementById('sidebarOverlay');
-  
-  const heroPortalBtn = document.getElementById('heroPortalBtn');
-  const footerCustomerBtn = document.getElementById('footerCustomerBtn');
-  const footerVendorBtn = document.getElementById('footerVendorBtn');
 
-  if (portalSidebar && sidebarOverlay) {
-    const openSidebar = () => {
-      portalSidebar.classList.add('active');
-      sidebarOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
+  if (portalSidebarToggle && portalSidebar && sidebarOverlay) {
+    portalSidebarToggle.addEventListener('click', () => {
+      portalSidebar.classList.add('open');
+      sidebarOverlay.style.display = 'block';
+    });
 
     const closeSidebar = () => {
-      portalSidebar.classList.remove('active');
-      sidebarOverlay.classList.remove('active');
-      document.body.style.overflow = '';
+      portalSidebar.classList.remove('open');
+      sidebarOverlay.style.display = 'none';
     };
 
-    if (portalSidebarToggle) portalSidebarToggle.addEventListener('click', openSidebar);
-    if (portalSidebarClose) portalSidebarClose.addEventListener('click', closeSidebar);
-    if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
-    
-    if (heroPortalBtn) heroPortalBtn.addEventListener('click', openSidebar);
-    if (footerCustomerBtn) footerCustomerBtn.addEventListener('click', openSidebar);
-    if (footerVendorBtn) footerVendorBtn.addEventListener('click', openSidebar);
+    portalSidebarClose.addEventListener('click', closeSidebar);
+    sidebarOverlay.addEventListener('click', closeSidebar);
   }
+
+  // =========================================================================
+  // Product Catalog Tabs Filter
+  // =========================================================================
+  const tabBtns = document.querySelectorAll('.product-tab-btn');
+  const tabContents = document.querySelectorAll('.product-tab-content');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active from all btns
+      tabBtns.forEach(b => b.classList.remove('active'));
+      // Add active to current
+      btn.classList.add('active');
+
+      const category = btn.getAttribute('data-cat');
+      
+      // Hide all contents
+      tabContents.forEach(content => content.classList.remove('active'));
+      
+      // Show matching content
+      const activeContent = document.getElementById(`cat-${category}`);
+      if (activeContent) {
+        activeContent.classList.add('active');
+      }
+    });
+  });
+
+  // =========================================================================
+  // Request a Quote Modal Toggle & Prefill
+  // =========================================================================
+  const quoteModal = document.getElementById('quoteModal');
+  const quoteCTA = document.getElementById('quoteCTA');
+  const heroQuoteBtn = document.getElementById('heroQuoteBtn');
+  const quoteModalClose = document.getElementById('quoteModalClose');
+  const quoteCategory = document.getElementById('quoteCategory');
+  const productInquireBtns = document.querySelectorAll('.product-inquire-btn');
+
+  const openQuoteModal = () => {
+    quoteModal.classList.add('open');
+  };
+
+  const closeQuoteModal = () => {
+    quoteModal.classList.remove('open');
+  };
+
+  if (quoteCTA) quoteCTA.addEventListener('click', openQuoteModal);
+  if (heroQuoteBtn) heroQuoteBtn.addEventListener('click', openQuoteModal);
+  if (quoteModalClose) quoteModalClose.addEventListener('click', closeQuoteModal);
+
+  // Close modal when clicking outside container
+  window.addEventListener('click', (e) => {
+    if (e.target === quoteModal) {
+      closeQuoteModal();
+    }
+  });
+
+  // Handle inquiry prefilling
+  productInquireBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const product = btn.getAttribute('data-product');
+      if (quoteCategory) {
+        // Map product string to option values
+        for (let i = 0; i < quoteCategory.options.length; i++) {
+          if (quoteCategory.options[i].text.includes(product) || quoteCategory.options[i].value.includes(product)) {
+            quoteCategory.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      openQuoteModal();
+    });
+  });
+
+  // =========================================================================
+  // B2B Inquiry Form Submit (Contact Us)
+  // =========================================================================
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  const resetFormBtn = document.getElementById('resetFormBtn');
+
+  if (contactForm && formSuccess) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Validate inputs
+      const name = document.getElementById('formName').value.trim();
+      const email = document.getElementById('formEmail').value.trim();
+      const subject = document.getElementById('formSubject').value.trim();
+      const message = document.getElementById('formMessage').value.trim();
+
+      if (name && email && subject && message) {
+        // Mock successful submit
+        contactForm.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+      }
+    });
+
+    if (resetFormBtn) {
+      resetFormBtn.addEventListener('click', () => {
+        contactForm.reset();
+        formSuccess.classList.add('hidden');
+        contactForm.classList.remove('hidden');
+      });
+    }
+  }
+
+  // =========================================================================
+  // Request a Quote Form Submit
+  // =========================================================================
+  const quoteForm = document.getElementById('quoteForm');
+  const quoteSuccess = document.getElementById('quoteSuccess');
+  const resetQuoteBtn = document.getElementById('resetQuoteBtn');
+
+  if (quoteForm && quoteSuccess) {
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('quoteName').value.trim();
+      const company = document.getElementById('quoteCompany').value.trim();
+      const email = document.getElementById('quoteEmail').value.trim();
+      const phone = document.getElementById('quotePhone').value.trim();
+      const category = document.getElementById('quoteCategory').value;
+      const message = document.getElementById('quoteMessage').value.trim();
+
+      if (name && company && email && phone && category && message) {
+        quoteForm.classList.add('hidden');
+        quoteSuccess.classList.remove('hidden');
+      }
+    });
+
+    if (resetQuoteBtn) {
+      resetQuoteBtn.addEventListener('click', () => {
+        quoteForm.reset();
+        quoteSuccess.classList.add('hidden');
+        quoteForm.classList.remove('hidden');
+      });
+    }
+  }
+
 });

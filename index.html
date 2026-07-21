@@ -3,51 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RISHABH & BROTHERS SERVICES Digital Platform - Connecting customers, suppliers, and internal operations through a unified, secure portal.">
-  <title>RISHABH & BROTHERS SERVICES | Digital Enterprise Platform</title>
+  <meta name="description" content="RISHABH & BROTHERS SERVICES - B2B Industrial Electrical Engineering, Control Panel Fabrication, Technical Manpower Supply, and Turnkey Infrastructure Projects.">
+  <title>RISHABH & BROTHERS SERVICES | Industrial Electrical Engineering</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
   
-  <!-- Fonts -->
+  <!-- Fonts: Outfit (Headings) & Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body class="light-theme">
+
+  <!-- Top Utilities Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-container">
+      <div class="top-contact">
+        <span><i class="fa-solid fa-phone"></i> +91-9987192626</span>
+        <span><i class="fa-solid fa-envelope"></i> sales@raigroups.in</span>
+      </div>
+      <div class="top-meta">
+        <span><i class="fa-solid fa-circle-check text-success"></i> GSTIN & Safety Compliant</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Header & Navigation -->
   <header class="main-header">
     <div class="container header-container">
       <a href="#" class="logo">
-        <span class="logo-accent">RISHABH</span> & BROTHERS SERVICES
+        <span class="logo-accent">RISHABH</span> & BROTHERS <span class="logo-sub">SERVICES</span>
       </a>
       
       <nav class="nav-menu" id="navMenu">
         <a href="#home" class="nav-link active">Home</a>
-        <a href="https://erp.raigroups.in/app/lead" target="_blank" class="nav-link"><i class="fa-solid fa-address-book"></i> CRM</a>
-        <a href="https://erp.raigroups.in/app" target="_blank" class="nav-link"><i class="fa-solid fa-chart-line"></i> ERP Dashboard</a>
-        <a href="#services" class="nav-link">Our Businesses</a>
         <a href="#about" class="nav-link">About Us</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#industries" class="nav-link">Industries</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="https://mail.raigroups.in" target="_blank" rel="noopener" class="nav-link"><i class="fa-solid fa-envelope"></i> Mail Login</a>
       </nav>
 
       <div class="header-actions">
-        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-moon"></i>
-        </button>
-        <button id="portalSidebarToggle" class="theme-btn" aria-label="Open portal menu" style="border-radius: 8px; border-color: var(--border-color); color: var(--text-main);">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+        <!-- Main CTAs -->
+        <button id="quoteCTA" class="btn btn-primary btn-sm"><i class="fa-solid fa-file-invoice-dollar"></i> Request Quote</button>
+        <button id="portalSidebarToggle" class="btn btn-secondary btn-sm" title="Enterprise Portals"><i class="fa-solid fa-gears"></i> Portal Access</button>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
   </header>
@@ -57,16 +66,89 @@
     <div class="hero-bg-glow"></div>
     <div class="container hero-container">
       <div class="hero-content">
-        <div class="badge">Digital Enterprise Hub</div>
-        <h1>Empowering Businesses, <span class="text-gradient">Connecting Ecosystems</span></h1>
-        <p class="hero-lead">A unified digital gateway designed for RISHABH & BROTHERS SERVICES customers and suppliers. Scale operations, manage logistics, and trade seamlessly on a single secure platform.</p>
+        <div class="badge"><i class="fa-solid fa-bolt"></i> Industrial Electrical Contractors</div>
+        <h1>Powering Industrial Infrastructure <span class="text-gradient">With Engineering Precision</span></h1>
+        <p class="hero-lead">Custom control panel fabrication, electrical panel work, skilled technical manpower supply, and turnkey power infrastructure installations. Engineered for heavy industry, contractors, and builders.</p>
+        
         <div class="hero-actions">
-          <button id="heroPortalBtn" class="btn btn-primary"><i class="fa-solid fa-users"></i> Client Access</button>
-          <a href="#services" class="btn btn-secondary">Explore Businesses</a>
+          <button id="heroQuoteBtn" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get Technical Quote</button>
+          <a href="#services" class="btn btn-secondary">Explore Services</a>
         </div>
       </div>
-      <div class="hero-graphic">
-        <img src="hero_graphic.jpg" alt="RISHABH & BROTHERS SERVICES Gateway" class="hero-image-illustration">
+      <div class="hero-infocard">
+        <h3><i class="fa-solid fa-shield-halved text-primary"></i> Technical Integrity</h3>
+        <p>Providing heavy-duty, high-quality electrical assemblies and maintenance audits in absolute compliance with safety standards.</p>
+        <div class="hero-checklist">
+          <div class="check-line"><i class="fa-solid fa-circle-check text-primary"></i> PCC, MCC & APFC Panel Work</div>
+          <div class="check-line"><i class="fa-solid fa-circle-check text-primary"></i> Turnkey HT/LT Cable Erection</div>
+          <div class="check-line"><i class="fa-solid fa-circle-check text-primary"></i> Skilled Technical Manpower</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators & Quick Stats -->
+  <section class="section-stats">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">10+ Years</span>
+        <span class="stat-lbl">Industrial Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-lbl">Systems Executed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-lbl">GST & E-Way Compliant</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">Standard</span>
+        <span class="stat-lbl">Electrical Contracting</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <div class="badge">Compliance & Philosophy</div>
+          <h2>B2B Execution With Technical Credibility</h2>
+          <p>RISHABH & BROTHERS SERVICES delivers reliable, industrial-grade electrical engineering installations. We support procurement teams, industrial plant owners, and infrastructure contractors with clear engineering drawings, high-quality material billing, and prompt execution schedules.</p>
+          <p>Every system we manufacture is built using top-tier switchgear components, and is fully tested for insulating resistance, short-circuit containment, and structural heat dissipation before delivery.</p>
+          
+          <div class="about-buttons" style="margin-top: 24px;">
+            <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Request Corporate Brochure</a>
+          </div>
+        </div>
+        <div class="about-spec-box">
+          <h3><i class="fa-solid fa-circle-nodes"></i> Standard Compliance</h3>
+          <div class="compliance-list">
+            <div class="compliance-item">
+              <i class="fa-solid fa-certificate"></i>
+              <div>
+                <strong>Switchgear Standard Engineering</strong>
+                <span>Fabrication in accordance with industry-standard electrical guidelines.</span>
+              </div>
+            </div>
+            <div class="compliance-item">
+              <i class="fa-solid fa-shield-heart"></i>
+              <div>
+                <strong>Safety Policy First</strong>
+                <span>Strict zero-accident protocols for all site work.</span>
+              </div>
+            </div>
+            <div class="compliance-item">
+              <i class="fa-solid fa-file-shield"></i>
+              <div>
+                <strong>GSTIN Registered</strong>
+                <span>Full compliance with taxation, invoices, and e-way billing.</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -75,102 +157,344 @@
   <section id="services" class="section services-section">
     <div class="container">
       <div class="section-header text-center">
-        <h2>Our Diverse Businesses</h2>
-        <p>RISHABH & BROTHERS SERVICES operates in key industries, driving economic value and seamless product flow across markets.</p>
+        <h2>Industrial Engineering Services</h2>
+        <p>Focused technical capabilities for industrial grids, control system installations, and contract engineering manpower.</p>
       </div>
       
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-industry"></i></div>
-          <h3>Manufacturing & Infrastructure</h3>
-          <p>Delivering high-quality industrial components and sustainable infrastructure solutions engineered for durability and efficiency.</p>
+          <div class="service-icon"><i class="fa-solid fa-square-poll-vertical"></i></div>
+          <h3>Electrical Panel Work</h3>
+          <p>Fabrication and overhaul of PCC (Power Control Center), MCC (Motor Control Center), and main power distribution panels up to 6300A.</p>
         </div>
+        
         <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
-          <h3>Wholesale Trading</h3>
-          <p>Bridging manufacturers and retail chains with bulk trading pipelines, prompt delivery schedules, and clear invoicing.</p>
+          <div class="service-icon"><i class="fa-solid fa-sliders"></i></div>
+          <h3>Control Panel Installation</h3>
+          <p>On-site integration of PLC automation cabinets, APFC capacitors, SCADA interfaces, and field transmitter wiring.</p>
         </div>
+        
         <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
-          <h3>Manpower Supply</h3>
-          <p>Providing skilled, semi-skilled, and certified technical workforces tailored for heavy industrial plants and corporate projects.</p>
+          <div class="service-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <h3>Skilled Manpower Supply</h3>
+          <p>Provision of qualified electricians, plant supervisors, cable jointing experts, and technical manpower for turnkey contract deployments.</p>
         </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <h3>Electrical Maintenance</h3>
-          <p>Comprehensive electrical diagnostics, testing, troubleshooting, and preventive maintenance for industrial and commercial grids.</p>
-        </div>
+        
         <div class="service-card">
           <div class="service-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-          <h3>Electrical Projects</h3>
-          <p>Turnkey execution of electrical installations, sub-station erections, control panels, and smart power distribution cabling.</p>
+          <h3>Turnkey Infrastructure Projects</h3>
+          <p>Substation construction, transformer erection, HT/LT cable laying, trench layouts, and industrial earthing installations.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-temperature-empty"></i></div>
+          <h3>Electrical Diagnostics & Audits</h3>
+          <p>Thermographic heat mapping, insulation resistance (Megger) diagnostics, load audits, and preventive grid maintenance.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3>Emergency Plant Support</h3>
+          <p>Fault location, relay calibration, busbar repairs, and electrical break-down restoration services for industrial plants.</p>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- About Section -->
-  <section id="about" class="section about-section">
+  <!-- Products Section (Technical Catalog) -->
+  <section id="products" class="section products-section">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-content">
-          <div class="badge">Enterprise Philosophy</div>
-          <h2>Simplifying Operations, Driving Growth</h2>
-          <p>RISHABH & BROTHERS SERVICES is built on operational excellence, speed, and integrity. Our digital platform reflects these core principles by connecting our clients, vendors, and management under one integrated umbrella.</p>
-          <p>By leveraging secure, automated cloud servers and robust document management practices, we guarantee transparency in invoicing, efficiency in shipping, and security for private client data.</p>
-          
-          <div class="stat-container">
-            <div class="stat-item">
-              <span class="stat-num">99.9%</span>
-              <span class="stat-lbl">Uptime Commitment</span>
+      <div class="section-header text-center">
+        <h2>Custom Fabricated Products</h2>
+        <p>Select a category to view standard B2B technical specifications and request price inquiries.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="product-tabs">
+        <button class="product-tab-btn active" data-cat="dist">Distribution Panels</button>
+        <button class="product-tab-btn" data-cat="apfc">APFC Panels</button>
+        <button class="product-tab-btn" data-cat="plc">PLC & Automation</button>
+        <button class="product-tab-btn" data-cat="bus">Busducts & Risers</button>
+      </div>
+
+      <!-- Tab Contents -->
+      <div class="product-content-wrapper">
+        
+        <!-- Tab 1: Distribution Panels -->
+        <div class="product-tab-content active" id="cat-dist">
+          <div class="product-grid">
+            <div class="product-info-col">
+              <h3>Power & Lighting Distribution Boards</h3>
+              <p>Heavy-duty, floor or wall-mounted enclosures designed for industrial distribution. Built with Siemens, Schneider, or L&T switchgear as standard.</p>
+              <button class="btn btn-secondary btn-sm product-inquire-btn" data-product="Distribution Panels"><i class="fa-solid fa-envelope"></i> Inquire Technical Quote</button>
             </div>
-            <div class="stat-item">
-              <span class="stat-num">100%</span>
-              <span class="stat-lbl">GDPR & GST Compliant</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num">256-bit</span>
-              <span class="stat-lbl">Data Encryption</span>
+            <div class="product-spec-col">
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Rated Operating Voltage</td>
+                    <td>415V / 1000V AC, 3 Phase</td>
+                  </tr>
+                  <tr>
+                    <td>Rated Current Capacity</td>
+                    <td>Up to 6300 Amps</td>
+                  </tr>
+                  <tr>
+                    <td>Short-Circuit Withstand</td>
+                    <td>50 kA to 100 kA for 1 sec</td>
+                  </tr>
+                  <tr>
+                    <td>Degree of Protection</td>
+                    <td>IP54 / IP55 / IP65 (Indoor & Outdoor)</td>
+                  </tr>
+                  <tr>
+                    <td>Enclosure Material</td>
+                    <td>CRCA Steel Sheet, Powder Coated</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-        <div class="about-image-wrapper">
-          <div class="security-infocard">
-            <h3><i class="fa-solid fa-shield-halved text-blue"></i> Platform Security</h3>
-            <p>Our infrastructure operates with role-based permissions, absolute session encryption (HTTPS/SSL), and offsite daily backups, safeguarding sensitive commercial files from unauthorized leaks.</p>
-            <div class="security-checklist">
-              <div class="check-line"><i class="fa-solid fa-shield"></i> Automatic IP Lockouts</div>
-              <div class="check-line"><i class="fa-solid fa-shield"></i> Zoho Mail Integration</div>
-              <div class="check-line"><i class="fa-solid fa-shield"></i> Offsite 3-2-1 Backups</div>
+
+        <!-- Tab 2: APFC Panels -->
+        <div class="product-tab-content" id="cat-apfc">
+          <div class="product-grid">
+            <div class="product-info-col">
+              <h3>Automatic Power Factor Correction (APFC) Panels</h3>
+              <p>Designed to maintain target power factor (PF) on electrical grids, eliminating reactive surcharge penalties. Features microprocessor-controlled controllers.</p>
+              <button class="btn btn-secondary btn-sm product-inquire-btn" data-product="APFC Panels"><i class="fa-solid fa-envelope"></i> Inquire Technical Quote</button>
+            </div>
+            <div class="product-spec-col">
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Controller Steps</td>
+                    <td>6, 8, 12, or 16 Stage Control</td>
+                  </tr>
+                  <tr>
+                    <td>Capacitor Type</td>
+                    <td>Heavy Duty MPP / Gas Filled (APP on request)</td>
+                  </tr>
+                  <tr>
+                    <td>Target Power Factor</td>
+                    <td>0.99 (Programmable Lag/Lead)</td>
+                  </tr>
+                  <tr>
+                    <td>Switching Mechanism</td>
+                    <td>Thyristor Switched / Capacitor Duty Contactors</td>
+                  </tr>
+                  <tr>
+                    <td>Harmonic Mitigation</td>
+                    <td>Detuned Reactors (7% / 14%) integrated</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
+        </div>
+
+        <!-- Tab 3: PLC Panels -->
+        <div class="product-tab-content" id="cat-plc">
+          <div class="product-grid">
+            <div class="product-info-col">
+              <h3>PLC Control & Automation Cabinets</h3>
+              <p>Turnkey process control panels integrated with PLC, HMI, and variable frequency drives (VFD) for industrial automation systems.</p>
+              <button class="btn btn-secondary btn-sm product-inquire-btn" data-product="PLC & Automation Panels"><i class="fa-solid fa-envelope"></i> Inquire Technical Quote</button>
+            </div>
+            <div class="product-spec-col">
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Controller Support</td>
+                    <td>Siemens S7, Schneider, Rockwell, Delta</td>
+                  </tr>
+                  <tr>
+                    <td>Human Machine Interface</td>
+                    <td>7" / 10" TFT Touchscreen panels integrated</td>
+                  </tr>
+                  <tr>
+                    <td>VFD Capacity</td>
+                    <td>0.75 kW to 315 kW with choke filters</td>
+                  </tr>
+                  <tr>
+                    <td>Communication Protocols</td>
+                    <td>Modbus TCP/IP, Profinet, EtherNet/IP</td>
+                  </tr>
+                  <tr>
+                    <td>Wiring & Ferrules</td>
+                    <td>Computerized printing, high-density conduits</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Busducts -->
+        <div class="product-tab-content" id="cat-bus">
+          <div class="product-grid">
+            <div class="product-info-col">
+              <h3>Copper & Aluminum Busducts</h3>
+              <p>Sandwich or air-insulated type busbar trunking systems for high-capacity current distribution from transformer to main panels.</p>
+              <button class="btn btn-secondary btn-sm product-inquire-btn" data-product="Busducts & Risers"><i class="fa-solid fa-envelope"></i> Inquire Technical Quote</button>
+            </div>
+            <div class="product-spec-col">
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Busbar Material</td>
+                    <td>99.9% Pure Copper / EC Grade Aluminum</td>
+                  </tr>
+                  <tr>
+                    <td>Insulation Type</td>
+                    <td>Class F Polyester film (Sandwich type)</td>
+                  </tr>
+                  <tr>
+                    <td>Current Rating</td>
+                    <td>1000A to 6300A</td>
+                  </tr>
+                  <tr>
+                    <td>Enclosure IP</td>
+                    <td>IP55 for Indoor, IP65/66 for Outdoor runs</td>
+                  </tr>
+                  <tr>
+                    <td>Compliance Test</td>
+                    <td>Insulation resistance verified</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Completed Projects Portfolio -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Executed Projects Portfolio</h2>
+        <p>Demonstrating technical capability and field experience through real industrial project deployment.</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-scope">
+            <span class="proj-tag">DG Maintenance</span>
+            <span class="proj-location"><i class="fa-solid fa-location-dot"></i> Noida, UP</span>
+          </div>
+          <h3>320 kVA DG Set Synchronizing & Panel Maintenance</h3>
+          <p class="proj-client"><strong>Client:</strong> Pre-Engineered Building (PEB) Manufacturer</p>
+          <p class="proj-desc">Scope included complete load assessment, protection relay calibration, busbar tightening, and integration of automatic AMF logic for dual mains backup.</p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-scope">
+            <span class="proj-tag">Power Supply</span>
+            <span class="proj-location"><i class="fa-solid fa-location-dot"></i> Ghazipur, UP</span>
+          </div>
+          <h3>Paddy Straw (Parali) Supply Grid Power Integration</h3>
+          <p class="proj-client"><strong>Client:</strong> Agricultural Energy Enterprise</p>
+          <p class="proj-desc">Turnkey execution of overhead distribution lines, transformer connection, HT cabling, outdoor earthing grid installation, and distribution boards setup.</p>
+        </div>
+
+        <div class="project-card">
+          <div class="project-scope">
+            <span class="proj-tag">Panel Fabrication</span>
+            <span class="proj-location"><i class="fa-solid fa-location-dot"></i> Delhi NCR</span>
+          </div>
+          <h3>Sub-station Main Distribution Panel (1600A) Execution</h3>
+          <p class="proj-client"><strong>Client:</strong> Industrial Complex Grid</p>
+          <p class="proj-desc">Design, CRCA box fabrication, copper busbar calculation, breaker mounting (ACB/MCCB), and on-site testing for main power distribution systems.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Industries Served Section -->
+  <section id="industries" class="section industries-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Industries We Serve</h2>
+        <p>Delivering high-capacity electrical distribution systems and support across core sectors.</p>
+      </div>
+
+      <div class="industries-grid">
+        <div class="industry-card">
+          <i class="fa-solid fa-industry"></i>
+          <h3>Manufacturing Plants</h3>
+        </div>
+        <div class="industry-card">
+          <i class="fa-solid fa-building-wheat"></i>
+          <h3>Agricultural Processing</h3>
+        </div>
+        <div class="industry-card">
+          <i class="fa-solid fa-city"></i>
+          <h3>Infrastructure Projects</h3>
+        </div>
+        <div class="industry-card">
+          <i class="fa-solid fa-tower-broadcast"></i>
+          <h3>Power Stations & Utilities</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info">
-          <h2>Get in Touch</h2>
-          <p>Have questions about registration or portal access? Our technical and sales teams are here to assist you.</p>
+          <h2>Technical & Sales Desk</h2>
+          <p>Consult with our engineering team for specifications, drawings, bill of materials (BOM), or technical contract proposals.</p>
           
           <div class="info-list">
             <div class="info-item">
-              <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="info-icon"><i class="fa-solid fa-location-dot"></i></span>
               <div class="info-text">
-                <span class="info-label">Support Email</span>
-                <a href="mailto:support@raigroups.in" class="info-val">support@raigroups.in</a>
+                <span class="info-label">Office Address</span>
+                <span class="info-val">RISHABH & BROTHERS SERVICES, Ghazipur, UP, India</span>
               </div>
             </div>
             <div class="info-item">
-              <span class="info-icon"><i class="fa-solid fa-tags"></i></span>
+              <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
               <div class="info-text">
-                <span class="info-label">Sales Department</span>
+                <span class="info-label">Sales Inquiries</span>
                 <a href="mailto:sales@raigroups.in" class="info-val">sales@raigroups.in</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon"><i class="fa-solid fa-circle-question"></i></span>
+              <div class="info-text">
+                <span class="info-label">Administrative Support</span>
+                <a href="mailto:support@raigroups.in" class="info-val">support@raigroups.in</a>
               </div>
             </div>
           </div>
@@ -178,32 +502,33 @@
 
         <div class="contact-form-wrapper">
           <form id="contactForm" class="contact-form">
-            <h3>Send a Message</h3>
+            <h3>Technical Inquiry Form</h3>
             <div class="form-group">
-              <label for="formName">Full Name</label>
-              <input type="text" id="formName" name="name" required placeholder="Enter your full name">
+              <label for="formName">Full Name *</label>
+              <input type="text" id="formName" name="name" required placeholder="Enter name">
             </div>
             <div class="form-group">
-              <label for="formEmail">Email Address</label>
-              <input type="email" id="formEmail" name="email" required placeholder="Enter your email address">
+              <label for="formEmail">Business Email *</label>
+              <input type="email" id="formEmail" name="email" required placeholder="Enter email">
             </div>
             <div class="form-group">
-              <label for="formSubject">Subject</label>
-              <input type="text" id="formSubject" name="subject" required placeholder="Topic of inquiry">
+              <label for="formSubject">Inquiry Subject *</label>
+              <input type="text" id="formSubject" name="subject" required placeholder="e.g. 1600A PCC Panel requirement">
             </div>
             <div class="form-group">
-              <label for="formMessage">Message</label>
-              <textarea id="formMessage" name="message" rows="4" required placeholder="Type your message here..."></textarea>
+              <label for="formMessage">Technical Specifications / Message *</label>
+              <textarea id="formMessage" name="message" rows="4" required placeholder="Describe technical scope, drawings availability, etc..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary submit-btn">
-              Send Message <i class="fa-solid fa-paper-plane"></i>
+              Submit Inquiry <i class="fa-solid fa-paper-plane"></i>
             </button>
           </form>
+          
           <div id="formSuccess" class="form-success-message hidden">
-            <i class="fa-regular fa-circle-check text-green"></i>
-            <h3>Message Sent!</h3>
-            <p>Thank you for contacting RISHABH & BROTHERS SERVICES. Our support team will get back to you shortly.</p>
-            <button id="resetFormBtn" class="btn btn-secondary">Send another message</button>
+            <i class="fa-regular fa-circle-check text-success" style="font-size: 48px;"></i>
+            <h3>Technical Inquiry Logged</h3>
+            <p>Thank you. Your request has been assigned a verification ticket and our engineering team will contact you with a response.</p>
+            <button id="resetFormBtn" class="btn btn-secondary">Submit another inquiry</button>
           </div>
         </div>
       </div>
@@ -215,37 +540,37 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo"><span class="logo-accent">RISHABH</span> & BROTHERS SERVICES</a>
-        <p>A unified digital ecosystem managing trading, logistics, manufacturing, and supply chains.</p>
+        <p>B2B Electrical Engineering & Custom Panel Fabrication Contractors. Standard compliance and safety-first industrial execution.</p>
         <div class="social-links">
           <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
         </div>
       </div>
       
       <div class="footer-links">
-        <h4>Navigation</h4>
+        <h4>Corporate Navigation</h4>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#services">Our Businesses</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#products">Products Catalog</a></li>
+          <li><a href="#projects">Executed Portfolio</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
-        <h4>Mail Services</h4>
+        <h4>Admin & Operations</h4>
         <ul>
-          <li><a href="https://mail.raigroups.in" target="_blank" rel="noopener">Mail Login</a></li>
-          <li><a href="#contact">Report Issue</a></li>
+          <li><a href="https://mail.raigroups.in" target="_blank" rel="noopener">Zoho Corporate Webmail</a></li>
+          <li><a href="https://erp.raigroups.in/app" target="_blank" rel="noopener">ERP/CRM Desk Login</a></li>
         </ul>
       </div>
       
       <div class="footer-links">
-        <h4>Portals</h4>
+        <h4>Portals Shortcut</h4>
         <ul>
-          <li><button class="footer-btn" id="footerCustomerBtn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Customer Portal</button></li>
-          <li><button class="footer-btn" id="footerVendorBtn" style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:14px; padding:0; text-align:left; transition:color 0.2s;">Supplier Portal</button></li>
+          <li><a href="https://customer.raigroups.in/login" target="_blank">Customer Portal</a></li>
+          <li><a href="https://vendor.raigroups.in/login" target="_blank">Supplier Portal</a></li>
         </ul>
       </div>
     </div>
@@ -261,8 +586,7 @@
     </div>
   </footer>
 
-  <!-- Custom JS -->
-  <!-- Enterprise Portals Sidebar -->
+  <!-- Enterprise Portals Sidebar (Maintained Sidebar Drawer) -->
   <div id="portalSidebar" class="emp-sidebar" style="overflow-y: auto;">
     <div class="sidebar-header">
       <h3 style="font-size: 20px; font-weight: 700; color: var(--text-main); margin: 0;">Enterprise Hub</h3>
@@ -294,7 +618,7 @@
 
       <!-- Employee Section -->
       <div class="sidebar-section">
-        <h4 style="font-size: 11px; text-transform: uppercase; color: var(--secondary-color); margin-bottom: 10px; font-weight: 700; letter-spacing: 1px;">Employee Portals</h4>
+        <h4 style="font-size: 11px; text-transform: uppercase; color: var(--color-purple); margin-bottom: 10px; font-weight: 700; letter-spacing: 1px;">Employee Portals</h4>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <a href="https://erp.raigroups.in/app" target="_blank" rel="noopener" class="sidebar-link">
             <i class="fa-solid fa-gears"></i>
@@ -337,6 +661,69 @@
   </div>
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-  <script src="script.js"></script>
+  <!-- B2B Request a Quote Modal -->
+  <div id="quoteModal" class="quote-modal-overlay">
+    <div class="quote-modal-container">
+      <div class="quote-modal-header">
+        <h3>Request Technical Quote</h3>
+        <button id="quoteModalClose" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="quote-modal-body">
+        <form id="quoteForm">
+          <div class="form-group">
+            <label for="quoteName">Full Name *</label>
+            <input type="text" id="quoteName" required placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="quoteCompany">Company Name *</label>
+            <input type="text" id="quoteCompany" required placeholder="e.g. Acme Corporation">
+          </div>
+          <div class="form-group">
+            <label for="quoteEmail">Business Email *</label>
+            <input type="email" id="quoteEmail" required placeholder="e.g. user@company.com">
+          </div>
+          <div class="form-group">
+            <label for="quotePhone">Phone / Mobile *</label>
+            <input type="tel" id="quotePhone" required placeholder="e.g. +91 9987192626">
+          </div>
+          <div class="form-group">
+            <label for="quoteCategory">Select System Category *</label>
+            <select id="quoteCategory" required class="select-field">
+              <option value="">-- Choose Category --</option>
+              <option value="Distribution Panels">Power & Lighting Distribution Panels</option>
+              <option value="APFC Panels">APFC Capacitor Panels</option>
+              <option value="PLC Panels">PLC & SCADA Automation Cabinets</option>
+              <option value="Busducts">Busducts & Risers</option>
+              <option value="Turnkey Electrical Projects">Turnkey HT/LT Projects</option>
+              <option value="Skilled Manpower Supply">Skilled Technical Manpower</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quoteMessage">Technical Details & Estimated Load Capacity *</label>
+            <textarea id="quoteMessage" rows="3" required placeholder="Mention switchgear brand preferences (Siemens/L&T/ABB), rating capacity, and estimated timelines..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; margin-top: 10px;">
+            Submit Technical RFP <i class="fa-solid fa-circle-check"></i>
+          </button>
+        </form>
+        
+        <div id="quoteSuccess" class="form-success-message hidden">
+          <i class="fa-regular fa-circle-check text-success" style="font-size: 40px; margin-bottom: 12px;"></i>
+          <h3>Request Logged Successfully</h3>
+          <p>Thank you for submitting your specifications. Our estimation engineer will review your inputs and contact you within 24 business hours.</p>
+          <button id="resetQuoteBtn" class="btn btn-secondary">Submit another request</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Direct Chat Widget -->
+  <a href="https://wa.me/919987192626?text=Hello%20Rishabh%20%26%20Brothers%20Services%2C%20I%20have%20an%20industrial%20electrical%20panel%2Fservices%20inquiry." class="whatsapp-float-widget" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Chat with Engineering Team</span>
+  </a>
+
+  <!-- Custom JS -->
+  <script src="script.js?v=3.0"></script>
 </body>
 </html>
