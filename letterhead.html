@@ -44,7 +44,7 @@
       color: #ffffff;
       padding: 16px 24px;
       border-radius: 8px;
-      width: 800px;
+      width: 794px;
       margin-bottom: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       display: flex;
@@ -256,11 +256,26 @@
 
   <!-- Instructions Bar (Will NOT print) -->
   <div class="no-print-toolbar">
-    <div>
-      <h3>Letterhead Printing Console</h3>
-      <p>Click below to print directly or save as PDF. Click inside the text area to edit letter content.</p>
+    <div style="display: flex; align-items: center; gap: 20px;">
+      <div>
+        <h3>Letterhead Console</h3>
+        <p>Edit content directly below. Set Ref type & print.</p>
+      </div>
+      <div>
+        <label style="font-size: 11px; color: #94a3b8; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 4px;">Ref. Type</label>
+        <select id="refTypeSelect" style="background: #1e293b; border: 1px solid #475569; color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; outline: none; cursor: pointer; height: 36px;">
+          <option value="RBS/2026/">General (RBS/2026/)</option>
+          <option value="RBS/QT/2026/">Quotation (RBS/QT/2026/)</option>
+          <option value="RBS/PO/2026/">Purchase Order (RBS/PO/2026/)</option>
+          <option value="RBS/INV/2026/">Invoice (RBS/INV/2026/)</option>
+          <option value="RBS/CH/2026/">Challan (RBS/CH/2026/)</option>
+        </select>
+      </div>
     </div>
-    <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Letter / Save PDF</button>
+    <div style="display: flex; gap: 10px;">
+      <a href="https://erp.raigroups.in" target="_blank" class="print-btn" style="background-color: #475569; text-decoration: none;"><i class="fa-solid fa-globe"></i> ERP Portal</a>
+      <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / PDF</button>
+    </div>
   </div>
 
   <!-- A4 Page Container -->
@@ -282,8 +297,8 @@
     <!-- Letter Body -->
     <div class="lh-content">
       <div class="lh-date-ref">
-        <div><strong>Ref No:</strong> RBS/2026/______</div>
-        <div><strong>Date:</strong> 22-July-2026</div>
+        <div><strong>Ref No:</strong> <span contenteditable="true" id="refNo" style="outline: none; border-bottom: 1px dashed var(--border-color); padding-bottom: 1px;">RBS/2026/______</span></div>
+        <div><strong>Date:</strong> <span contenteditable="true" id="refDate" style="outline: none; border-bottom: 1px dashed var(--border-color); padding-bottom: 1px;">22-July-2026</span></div>
       </div>
 
       <div class="lh-body">
@@ -327,6 +342,22 @@
     </div>
 
   </div>
+
+  <script>
+    // Update Ref No when dropdown value changes
+    document.getElementById('refTypeSelect').addEventListener('change', function() {
+      var prefix = this.value;
+      document.getElementById('refNo').innerText = prefix + '______';
+    });
+
+    // Auto-populate today's date formatted as DD-Mmm-YYYY (e.g. 23-Jul-2026)
+    window.addEventListener('DOMContentLoaded', function() {
+      var today = new Date();
+      var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      var formattedDate = today.getDate() + "-" + months[today.getMonth()] + "-" + today.getFullYear();
+      document.getElementById('refDate').innerText = formattedDate;
+    });
+  </script>
 
 </body>
 </html>
