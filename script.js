@@ -213,16 +213,47 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Validate inputs
       const name = document.getElementById('formName').value.trim();
       const email = document.getElementById('formEmail').value.trim();
       const subject = document.getElementById('formSubject').value.trim();
       const message = document.getElementById('formMessage').value.trim();
 
       if (name && email && subject && message) {
-        // Mock successful submit
-        contactForm.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const origBtnText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Submitting...';
+
+        fetch('https://erp.raigroups.in/api/method/raigroups_theme.utils.submit_inquiry', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            form_type: 'contact',
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message && data.message.status === 'success') {
+            contactForm.classList.add('hidden');
+            formSuccess.classList.remove('hidden');
+          } else {
+            alert('Something went wrong. Please try again later.');
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          alert('Failed to submit request. Please check your internet connection.');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = origBtnText;
+        });
       }
     });
 
@@ -254,8 +285,43 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = document.getElementById('quoteMessage').value.trim();
 
       if (name && company && email && phone && category && message) {
-        quoteForm.classList.add('hidden');
-        quoteSuccess.classList.remove('hidden');
+        const submitBtn = quoteForm.querySelector('button[type="submit"]');
+        const origBtnText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Submitting...';
+
+        fetch('https://erp.raigroups.in/api/method/raigroups_theme.utils.submit_inquiry', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            form_type: 'quote',
+            name: name,
+            company: company,
+            email: email,
+            phone: phone,
+            category: category,
+            message: message
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.message && data.message.status === 'success') {
+            quoteForm.classList.add('hidden');
+            quoteSuccess.classList.remove('hidden');
+          } else {
+            alert('Something went wrong. Please try again later.');
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          alert('Failed to submit request. Please check your internet connection.');
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = origBtnText;
+        });
       }
     });
 
